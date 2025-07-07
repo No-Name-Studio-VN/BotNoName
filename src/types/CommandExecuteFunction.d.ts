@@ -6,7 +6,7 @@ import type {
 } from 'discord.js'
 import type { i18n } from 'i18next'
 
-import type { BotClient } from './BotClient'
+import type { BotClient } from '@/helpers/botClient'
 
 /**
  * Represents a function that executes a slash command

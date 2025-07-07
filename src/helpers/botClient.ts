@@ -8,6 +8,7 @@ import type { ContextCommand, SlashCommand } from '@/types/Command'
 export class BotClient extends Client {
   static #instance: BotClient | null = null
   #handlers = ['index']
+  messageCommands: Collection<string, SlashCommand> = new Collection()
   slashCommands: Collection<string, SlashCommand> = new Collection()
   contextCommands: Collection<string, ContextCommand> = new Collection()
 

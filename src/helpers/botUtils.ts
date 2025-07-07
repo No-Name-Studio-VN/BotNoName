@@ -153,11 +153,11 @@ export async function getBotStats(client: BotClient) {
       messageIntent: { enabled: messageIntent },
       messageCommand: {
         enabled: messageCommand,
-        count: client?.commands?.size ?? 0
+        count: client?.messageCommands?.size ?? 0
       },
       interactionCommand: {
         enabled: interactionCommand,
-        count: client?.slash?.size ?? 0
+        count: client?.slashCommands?.size ?? 0
       },
       dashboard: { enabled: dashboard }
     }

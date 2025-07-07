@@ -10,6 +10,7 @@
   "role": "Role",
   "JoinedDate": "Joined Date",
   "CreatedDate": "Created Date",
+  "AccountType": "Account Type",
   "HighestRole": "Highest Role",
   "currentStatus": "Current Status",
   "time": "Time",

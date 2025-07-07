@@ -10,6 +10,7 @@
   "role": "Vai trò",
   "JoinedDate": "Ngày tham gia máy chủ",
   "CreatedDate": "Ngày tạo tài khoản",
+  "AccountType": "Loại tài khoản",
   "HighestRole": "Vai trò cao nhất",
   "currentStatus": "Trạng thái hiện tại",
   "time": "Thời gian",

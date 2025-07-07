@@ -136,22 +136,7 @@ dist
 .pnp.*
 
 config.json
-model.nlp
-testfeatures.js
 .DS_Store
-
-dashboard/public/static/js/bundle.js
-dashboard/public/static/css/bundle.css
-dashboard/public/static/css/libs/videojs.css
-dashboard/public/static/js/libs/videojs.js
-dashboard/public/static/js/libs/tweenmax.js
-dashboard/public/static/css/pages/embedbuilder/libs.css
-dashboard/public/static/js/pages/embedbuilder/libs.js
-dashboard/public/static/css/libs/bootstrap-table.css
-dashboard/public/static/js/bootstrap-table.js
-dashboard/public/static/js/libs/encrypt.js
-dashboard/public/static/js/editorjs.js
-dashboard/public/static/css/libs/select2.css
-dashboard/build/
-
-store/
+/generated/prisma
+/store
+/prisma

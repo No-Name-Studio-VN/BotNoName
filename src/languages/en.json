@@ -1,0 +1,581 @@
+{
+  "BotNoPermission": "I don't have permisson to execute the command, please check again.",
+  "UserNoPermission": "Sorry, you are not allowed to use this command.",
+  "commandDisabled": "This command was disabled by the guild's moderators.",
+  "user": "User",
+  "userID": "User ID",
+  "userTag": "User Tag",
+  "userNickname": "Nickname in guild",
+  "userType": "User Type",
+  "role": "Role",
+  "JoinedDate": "Joined Date",
+  "CreatedDate": "Created Date",
+  "HighestRole": "Highest Role",
+  "currentStatus": "Current Status",
+  "time": "Time",
+  "Notemoji": "This is not emoji.",
+  "Usage": "Usage",
+  "punch": "If I were you, I would punch $user.",
+  "hugging": "is hugging",
+  "assignrole_rolenotexist": "This role does not exist at all!",
+  "assignrole_memberalreadyhasrole": "The member already has this role!",
+  "assignrole_roleassigned": "Role successfully assigned!",
+  "assignrole_no": "Unfortunately, I do not have the permission to give this member the role! Please check my permission!",
+  "assignrole_format": "nn_assignrole <@User> <name of the role>",
+  "createrole_successMessage": "Name of the role: ",
+  "createrole_no": "Unfortunately, I do not have the permission to give this member the role! Please check my permission!",
+  "createrole_successTitle": "Role was created!",
+  "createrole_format": "nn_createrole <#color> <name of the role>",
+  "IPnotdefined": "The server IP is not defined, please check again and type the command like: `nn_mcserver IP Port Protocol` [Port and Protocol is optional].",
+  "assignrole_nomention": "Mention someone to execute the command.",
+  "assignrole_norolename": "You must specify the name of the role!",
+  "hugcommand": "Mention someone to give them a warm hug. :3",
+  "result": "Result",
+  "serverdown": "There was an issue while trying to fetch the server’s data. The server is probably offline and/or in maintenance.",
+  "soundboardcommand": "File is not existed. You can type **`nn_soundboardhelp`** to see available sounds in the system. :3",
+  "unknownuser": "Oh no, I can't find that user.",
+  "havequeue": "Sorry, you can not apply soundboard when using music functions.",
+  "nochannel": "Sorry, you can not apply soundboard without joining any voice channels.",
+  "novideo": "Sorry, no videos match your search request!",
+  "novoicechannel": "You might need to join a voice channel to do this.",
+  "notsamevoice": "You need to be in the same room with bot!",
+  "playhelp": "Usage: PREFIX_play <YouTube URL | Tên Video | Soundcloud URL | Spotify URL>",
+  "fullvoicechannel": "Your voice channel's current members have exceeded the maximum limit. Please try again later!",
+  "notableconnect": "I can't join your voice channel, please check again for my permission.",
+  "notablespeak": "I can't speak in your voice channel, please check again for my permission.",
+  "siname": "Server Name",
+  "siowner": "Server Owner",
+  "siregion": "Server Region",
+  "simemcount": "Members Count",
+  "sicustomurl": "Server's Custom Vanity URL",
+  "siprotect": "Verification Levels",
+  "sicreated": "Server's Founding Time",
+  "sicrative": "Server's Create Time",
+  "sides": "Server Description",
+  "siv": "Verified?",
+  "siboost": "Server Boost Status",
+  "prefixsv": "Prefix of this server:",
+  "langsv": "Language used by bot in this server:",
+  "language": "Language:",
+  "online": "Online",
+  "offline": "Offline",
+  "idle": "Idle",
+  "dontdisturb": "Do not disturb",
+  "nopermission": "No Permission",
+  "nostatusfound": "No status found",
+  "banlist": "Ban List of",
+  "unban": "Unbanned",
+  "fromserver": "from server",
+  "errorOccurred": "Error occurred",
+  "timeoutalert": "Timeout Alert",
+  "pleasewait": "Please wait",
+  "beforetryingagain": "before trying again",
+  "ownerOnly": "Only authorized member of the development team can use this command.",
+  "entervalidurl": "Please enter a valid URL!",
+  "failedtosearch": "Failed to find anything using the specified query on",
+  "pleasetryagain": "Please try again.",
+  "invalidURL": "Invalid URL.",
+  "dontstealotherbutton": "You can not steal other's button. Make your own one!",
+  "days": "days",
+  "ago": "ago",
+  "roleinfo": {
+    "author": "Information about:",
+    "field1": "**Name: **",
+    "field2": "**ID: **",
+    "field3": "**Color: **",
+    "field4": "**Date Created: **",
+    "field5": "**Position: **",
+    "field6": "**Member Count: **",
+    "field7": "**Hoisted: **",
+    "field8": "**Mentionable: **",
+    "field9": "**Permissions: **"
+  },
+  "aki": {
+    "gameEnded": "Game Ended",
+    "gameEndedDesc": "your game has ended due to one minute of inactivity.",
+    "question": "Question",
+    "progress": "Progress",
+    "pleaseType": "Please type...",
+    "stopTip": "You can also type \"S\" or \"Stop\" to end your game.",
+    "yes": "Yes",
+    "no": "No",
+    "dontKnow": "Don't Know",
+    "dontKnowNoComma": "Dont Know",
+    "probably": "Probably",
+    "probablyNot": "Probably Not",
+    "back": "Back",
+    "stop": "Stop",
+    "thinking": "Thinking...",
+    "isThisYourCharacter": "Is this your character?",
+    "isThisYourAnimal": "Is this your animal?",
+    "isThisYourObject": "Is this your object?",
+    "ranking": "Ranking",
+    "noOfQuestions": "No. of Questions",
+    "wellPlayed": "Well played!",
+    "guessedRightOneMoreTime": "I guessed right one more time!",
+    "character": "Character",
+    "animal": "Animal",
+    "object": "Object",
+    "defeated": "bravo! You have defeated me...",
+    "gameForceEnd": "your game was successfully ended!",
+    "startingGame": "Starting game...",
+    "startingGameDesc": "The game will start in a few seconds..."
+  },
+  "providequery": "Please provide a query!",
+  "reason": "Reason:",
+  "roleList": {
+    "owner": "Server Owner",
+    "administrator": "Administrator",
+    "moderator": "Moderator",
+    "helper": "Helper",
+    "member": "Member"
+  },
+  "enabled": "Enabled",
+  "disabled": "Disabled",
+  "music": {
+    "nosongplaying": "🚨 There is nothing in the player now.",
+    "stop": "⏹ Stopped the player and cleared the queue.",
+    "autoplay": "Autoplay",
+    "pause": "⏸ Paused the player",
+    "resume": "⏩ Resumed the player",
+    "skip": "⏭ Skipped the current track",
+    "previous": "⏮ Back to the previous track.",
+    "noprevious": "🚨 I can't find any previous item in the player.",
+    "nolyricsfound": "🚨 I can't find any lyrics for this song.",
+    "nosongfound": "🚨 I can't find any song with that name.",
+    "spotifyrestrictions": "🚨 With the new restrictions imposed lately by Spotify, our lyrics crawler was broken... Please remains calm as we trying to fix this issue."
+  },
+  "checkGuild": {
+    "embed": {
+      "title": "---Get all informations about %c on Shard-Id %x----",
+      "description": "Disclaimer: This informations are public and accessable for every bot. I don't expose sensetive data!",
+      "fields": [
+        "Guild Description",
+        "Verification Level:",
+        "Rules Channel:",
+        "Member Count:",
+        "Channel Count:",
+        "Role Count:",
+        "Emoji Count",
+        "Sticker Count",
+        "Ban Count:",
+        "Vanity URL:",
+        "Vanity URL uses:",
+        "NSFW Level:",
+        "Server Boosts:",
+        "Server Boost Level:",
+        "Is the server a large one?",
+        "Maximum Members:",
+        "AFK Timer:",
+        "AFK Channel:",
+        "Video Channel User Limit:",
+        "Prefered Location:",
+        "Owner",
+        "I joined at:"
+      ]
+    }
+  },
+  "guildinfo": {
+    "name": "Guild Name",
+    "id": "Guild ID",
+    "owner": "Guild Owner",
+    "ownerID": "Guild Owner ID",
+    "memberCount": "Member Count",
+    "roleCount": "Role Count",
+    "channelCount": "Channel Count",
+    "emojiCount": "Emoji Count",
+    "stickerCount": "Sticker Count",
+    "banCount": "Ban Count",
+    "vanityURL": "Vanity URL",
+    "vanityURLUses": "Vanity URL Uses",
+    "verificationLevel": "Verification Level",
+    "rulesChannel": "Rules Channel",
+    "description": "Description",
+    "nsfwLevel": "NSFW Level",
+    "boosts": "Server Boosts",
+    "boostLevel": "Server Boost Level",
+    "isLarge": "Is the server a large one?",
+    "maxMembers": "Maximum Members",
+    "afkTimer": "AFK Timer",
+    "afkChannel": "AFK Channel",
+    "videoChannelUserLimit": "Video Channel User Limit",
+    "preferredLocale": "Prefered Location",
+    "joinedAt": "Joined at",
+    "createdAt": "Created at",
+    "publicUpdatesChannelId": "Public Updates Channel ID"
+  },
+  "formoreinfo": "For more information, please use",
+  "MemberCount": "Number of Members",
+  "invite": "Invite",
+  "pagination_embed": {
+    "pagenum": "Page {{num}}",
+    "footer": "Use ⬅️➡️ to navigate the pages!"
+  },
+  "economy": {
+    "invalidAmount": "Invalid amount. Please enter a valid number.",
+    "insufficientBalance": "You don't have enough balance to perform this action.",
+    "botNotAllowed": "Sorry, bot accounts cannot participate on economy.",
+    "daily": {
+      "24hours": "You can only claim your daily reward once every 24 hours.",
+      "claimed": "You have already claimed your daily reward. Please come back after {{time}}.",
+      "success": "You received {{object}} as your daily reward!",
+      "fail": "An error occurred while trying to claim your daily reward. Please try again later.",
+      "onstreak": "You are on {{streak}} daily streak!"
+    },
+    "balance": {
+      "title": "Balance",
+      "description": "Your current balance is {{object}}."
+    },
+    "bank": {
+      "title": "Bank",
+      "description": "Your current bank balance is {{object}}."
+    },
+    "transfer": {
+      "success": "{{sender}} have successfully transferred {{amount}} to {{receiver}}.",
+      "selfTransfer": "Sorry, you cannot transfer money to yourself."
+    },
+    "beg": {
+      "success": "{{user}} heard your plea and gave you {{amount}}.",
+      "fail": "You begged but no one gave you anything. Better luck next time!"
+    },
+    "rep": {
+      "self": "Bro, you really thinks it's legit to rep yourself?",
+      "success": "You gave {{user}} {{rep}} reputations."
+    }
+  },
+  "game": {
+    "starting": "The game is starting...",
+    "notSupportMultiplayer": "Sorry that game is not a multiplayer game!",
+    "notAllowSameUser": "You can't play with yourself!",
+    "anotherInstanceRunning": "You must either finish or end your current game (`/endgame`) before you can play another!",
+    "friendPlaying": "The person you are trying to play against is already in a game!",
+    "limitRunningInstance": "Sorry, there can only be 1 instance of a game at a time!",
+    "noBetsPlaced": "You need to bet on at least one side to start the game.",
+    "noResponse": "No response received, cancelled setup 😓",
+    "promptBetInput": "Please enter the amount you want to bet on this game.",
+    "baucua": {
+      "introduction": "Choose a pet to bet on. If the pet you choose wins, you will receive double the amount you bet. Otherwise, you will lose.",
+      "items": {
+        "bau": "Bau",
+        "cua": "Crab",
+        "tom": "Shrimp",
+        "ca": "Fish",
+        "ga": "Rooster",
+        "nai": "Deer"
+      },
+      "buttons": {
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "help": "Help"
+      },
+      "promptPlaceBet": "Please place your bet on one of the items below. Max allowed bet is {{max}}.",
+      "maxSideBetReached": "You can only bet on max {{max}} sides",
+      "betAmount": "Enter the amount you want to bet on",
+      "invalidroll": "Invalid roll. Please try again.",
+      "betamount": "Bet Amount",
+      "enteramount": "Enter the amount",
+      "resultAnnouncement": "You {{result}} {{amount}}",
+      "nobetPlaced": "No bet placed",
+      "placedBet": "You have bet {{amount}} on {{roll}}",
+      "win": "won",
+      "lose": "lost",
+      "cancelled": "Game was cancelled!"
+    },
+    "coinflip": {
+      "title": "Coin Flip",
+      "win": "You won ",
+      "lose": "You lost ",
+      "land": "The coin landed on "
+    },
+    "slots": {
+      "title": "Slot Machine",
+      "win": "{{user}} bet {{bet}} and win {{amount}}",
+      "lose": "{{user}} lost {{amount}}"
+    }
+  },
+  "cmds": {
+    "errors": {
+      "invalidSubcommand": "Invalid subcommand. Please use `help` to see the available subcommands."
+    },
+    "rolelist": {
+      "title": "List of roles",
+      "tooManyRoles": "There are too many roles to display. Please use the search function to find the role you are looking for.",
+      "noRoles": "Bro your guild has no roles..."
+    },
+    "translate": {
+      "error": "Sorry, your input contains something that I can't really understand.",
+      "noinput": "Please enter the text you want to translate."
+    },
+    "emoji": {
+      "not_a_emoji": "The attachment is not a valid emoji.",
+      "no_emoji": "I can't not find any emoji. Please make sure you included a valid emoji.",
+      "list": "List of emojis",
+      "DeletedTitle": "Emoji Deleted",
+      "CreatedTitle": "Emoji Created",
+      "UpdatedTitle": "Emoji Updated",
+      "OldName": "Old Name",
+      "NewName": "New Name",
+      "syntax": "Syntax",
+      "name": "Name"
+    },
+    "setupjoinvc": {
+      "channel_name": "Join to Create",
+      "channelNotFound": "I can't find the channel you mentioned. Please make sure you entered the correct channel.",
+      "notConfigured": "The voice channel has not been set as the join to create channel yet.",
+      "unableToCreate": "I can't create the voice channel. Please check my permissions.",
+      "notInThisGuild": "This channel must be in the same server as the bot.",
+      "notVoiceChannel": "This channel must be a voice channel.",
+      "alreadySet": "This channel is already set as the join to create channel.",
+      "success": "The voice channel has been successfully set as the join to create channel.",
+      "reset": "The join to create channel has been successfully reset.",
+      "alreadyExists": "You already have a voice channel. Please delete it first before creating a new one.",
+      "interface": {
+        "title": "Temporary channel interface!",
+        "description": "This is a temporary voice channel. It will be deleted when everyone leaves the channel.\n\nUse the following drop down menus to control your channel settings/permissions.",
+        "configure": {
+          "title": "Configure",
+          "description": "Configure the channel settings."
+        },
+        "lock": {
+          "title": "Lock",
+          "description": "Lock the channel."
+        },
+        "unlock": {
+          "title": "Unlock",
+          "description": "Unlock the channel."
+        },
+        "ghost": {
+          "title": "Ghost",
+          "description": "Make the channel invisible."
+        },
+        "unghost": {
+          "title": "Unghost",
+          "description": "Make the channel visible."
+        },
+        "success": "The action has been successfully executed."
+      }
+    },
+    "soundboard": {
+      "fileNotFound": "The file you are trying to play does not exist.",
+      "playing": "Playing sound: {{sound}}...",
+      "noSound": "No sound found with that name."
+    },
+    "lovemeter": {
+      "sameUser": "You can't measure love with yourself!",
+      "description": [
+        "Aww, no love at all. 😢",
+        "Hmm, there might be something there. 🤔",
+        "Looks like a good match! 😍",
+        "Wow, you two are on fire! 🔥",
+        "You two are a match made in heaven! 💖"
+      ],
+      "noUser2": "Please specify an user"
+    },
+    "catchthefish": {
+      "won": "GG! You caught 3 fishes and won {{reward}}!",
+      "lost": "Oof, you lost. Better luck next time!",
+      "title": "Catch 3 fishes to win!"
+    },
+    "invalidSubcommand": "The sub command is invalid."
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "captcha": {
+      "require": "You need to verify yourself as a human to continue."
+    },
+    "goback": "Go Back",
+    "reload": "Reload",
+    "loading": "Loading",
+    "cancel": "Cancel",
+    "apply": "Apply",
+    "add": "Add",
+    "no_search_result": "No search results found.",
+    "choices": {
+      "noChoicesText": "No choices to choose from",
+      "itemSelectText": "Press to select",
+      "uniqueItemText": "Only unique values can be added",
+      "customAddItemText": "Only values matching specific conditions can be added"
+    },
+    "login": {
+      "signin": "Sign in",
+      "with_discord": "$t(dashboard.login.signin) with Discord",
+      "redirect": "Redirecting...",
+      "error": "An error occurred while trying to $t(dashboard.login.signin). Please try again later.",
+      "toacc": "$t(dashboard.login.signin) to your account",
+      "use_your_account": "Use your Discord Account"
+    },
+    "logout": {
+      "signout": "Sign out"
+    },
+    "term_and_condition": {
+      "term": "Terms of Service",
+      "condition": "Conditions of Use",
+      "accept": "Accept",
+      "learn_more": "Learn more about our Terms and Conditions"
+    },
+    "pages": {
+      "index": {
+        "video_section": {
+          "highlight": "powerful & adorable",
+          "content": [
+            "Kick start your server with",
+            "Most {{highlight}} Discord bot ever existed.",
+            "Serving {{members}} members in {{servers}} servers."
+          ]
+        },
+        "p2_section": [
+          {
+            "slash": "Music Player",
+            "title": "🎶 Listen to music with your friends",
+            "description": "Enjoy a seamless listening experience and take your server to the next level with our music streaming feature. Bring high quality music to your server and listen with your friends, all from a wide range of popular platforms. Choose from an extensive collection of songs, albums, and playlists, and share your favorite tunes with your community. Easily to queue up songs and control playback, all from the comfort of your voice channel."
+          },
+          {
+            "slash": "Chat Leaderboard",
+            "title": "🏆 Levels and XP in your Discord Server",
+            "description": "Everyone loves to grind. Use our leveling system to identify and reward the most active members of your community. Let them show off a cool customizable rank card and compete for the mighty first spot of your leaderboard! {{endl}} Automatically give roles when they reach a certain level to reward the most active members with access to exclusive channels and privileged permissions. {{endl}} Configure and claim a custom link to your leaderboard. Configure roles to earn more xp, blacklist roles, and other configuration features are also included."
+          }
+        ],
+        "p3_section": {
+          "h1": "Application Features",
+          "h2": "We have a simple solution to a complex problem",
+          "items": [
+            {
+              "title": "Components",
+              "description": "Our product is full of customized and extendable components."
+            },
+            {
+              "title": "Utilities",
+              "description": "Powerful utility classes makes it easy to customize your product."
+            },
+            {
+              "title": "Dashboard",
+              "description": "A feature-rich, configurable web dashboard. You can easily enable, disable, and configure everything."
+            },
+            {
+              "title": "Documentation",
+              "description": "Our product is fully documented with instructions and usage examples."
+            },
+            {
+              "title": "Code Snippets",
+              "description": "Use code snippets to easily drop new components into your project."
+            },
+            {
+              "title": "Plugins",
+              "description": "We've implemented powerful third party plugins for added functionality."
+            }
+          ]
+        },
+        "p4_section": {
+          "title": "Get Started!",
+          "h1": "Here's What You Get",
+          "h2": "A wide range of features that are available for free to everyone, every server which can really empower its entertainment.",
+          "fourfeatures": [
+            {
+              "title": "Community Engagement",
+              "description": "Enhance your server's community interaction with our Discord bot. It welcomes new members, facilitates lively discussions, and ensures a vibrant community atmosphere.",
+              "href": "#"
+            },
+            {
+              "title": "Server Management",
+              "description": "Streamline your server management with powerful moderation tools. Our bot can handle user permissions, manage roles, and keep your community safe and organized.",
+              "href": "#"
+            },
+            {
+              "title": "Entertainment Hub",
+              "description": "Turn your server into an entertainment hub with our bot's fun features. Add games, music, and memes to keep your community engaged and entertained.",
+              "href": "#"
+            },
+            {
+              "title": "Customizable Commands",
+              "description": "Tailor the bot to your server's needs with customizable commands. Whether it's for information retrieval or specific server actions, our bot adapts to your requirements.",
+              "href": "#"
+            }
+          ]
+        },
+        "review_section": {
+          "title": "Don’t just take our words for it, see what our users like you are saying"
+        }
+      },
+      "error": {
+        "title": "Unknown error!",
+        "description": "But relax! Our cat is here to play you some music.",
+        "button": "Back Home"
+      },
+      "maintenance": {
+        "title": "Under Maintenance",
+        "description": "We're undergoing scheduled update and dashboard will be available shortly. Thanks for your patience!"
+      },
+      "stickers_emojis": {
+        "download": {
+          "error": {
+            "title": "Unable to download all {{type}}s",
+            "description": "An error occurred while trying to download all {{type}}s. Please try again."
+          },
+          "generating": "Generating your {{type}}...",
+          "completed": "All {{type}}s are ready for download!"
+        }
+      },
+      "sticker": {
+        "title": "Sticker"
+      },
+      "emoji": {
+        "title": "Emoji"
+      }
+    }
+  },
+  "cmd_afk_nopermission": "If you can't see the AFK tag in your username, it is because I don't have the permission to change it. For more info, contact the server managers.",
+  "cmd_afk_default": "I am AFK. I will reply to you when I am back.",
+  "notepad": {
+    "title": "Notepad",
+    "description": "A simple notepad to store your notes. You can access your notes from anywhere, anytime.",
+    "actions": {
+      "new": "New Note",
+      "edit": "Edit Note",
+      "delete": "Delete Note"
+    },
+    "label": {
+      "search": "Search all notes",
+      "title": "Title",
+      "description": "Description",
+      "tags": "Tags",
+      "save": "Save",
+      "minimize": "Minimize",
+      "maximize": "Maximize",
+      "reload": "Reload",
+      "close": "Close",
+      "wordsCount": "Words in notepad"
+    },
+    "messages": {
+      "noNotes": "You don't have any notes yet. Click the button above to create a new note.",
+      "noteSaved": "Note saved successfully.",
+      "noteDeleted": "Note deleted successfully.",
+      "noteRestored": "Note restored successfully.",
+      "error": {
+        "save": "An error occurred while saving the note. Please try again.",
+        "delete": "An error occurred while deleting the note. Please try again.",
+        "restore": "An error occurred while restoring the note. Please try again.",
+        "fetch": "An error occurred while fetching the notes. Please try again."
+      },
+      "limit": {
+        "reached": "You have reached the maximum limit of notes. Please delete some notes to create new ones.",
+        "title": "Note Limit Reached",
+        "description": "You have reached the maximum limit of notes. Please delete some notes to create new ones.",
+        "button": "Delete Note",
+        "buttonTitle": "Delete a note to create a new one."
+      }
+    },
+    "notetopics": {
+      "general": "General",
+      "favourite": "Favourite",
+      "pinned": "Pinned",
+      "locked": "Locked",
+      "archived": "Archived",
+      "deleted": "Deleted"
+    }
+  },
+  "chatbot": {
+    "cooldown": "You have sent so much message recently, please slow down!",
+    "error": "An unexpected error occurred while processing your request. Please try again later.",
+    "tokenExceeded": "You have exceeded the maximum number of tokens allowed. Please try again later."
+  }
+}

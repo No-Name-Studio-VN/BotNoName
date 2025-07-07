@@ -1,0 +1,580 @@
+{
+  "BotNoPermission": "Bot không có quyền để thực thi lệnh này. Vui lòng kiểm tra lại hoặc liên hệ với chủ server hoặc sử dụng đường link dưới đây.",
+  "UserNoPermission": "Xin lỗi nhưng bạn không được quyền sử dụng lệnh này. Vui lòng kiểm tra lại hoặc liên hệ với chủ server.",
+  "commandDisabled": "Lệnh này đã bị vô hiệu hoá bởi quản trị viên",
+  "user": "Tên người dùng",
+  "userID": "ID người dùng",
+  "userTag": "Thẻ người dùng",
+  "userNickname": "Biệt danh trong máy chủ",
+  "userType": "Phân loại",
+  "role": "Vai trò",
+  "JoinedDate": "Ngày tham gia máy chủ",
+  "CreatedDate": "Ngày tạo tài khoản",
+  "HighestRole": "Vai trò cao nhất",
+  "currentStatus": "Trạng thái hiện tại",
+  "time": "Thời gian",
+  "Notemoji": "Đây không phải là emoji.",
+  "Usage": "Cách dùng",
+  "punch": "Nếu phải tôi tôi đấm $user mấy nhát.",
+  "hugging": "đang ôm",
+  "assignrole_no": "Mình không có vai trò để thực thi quyền gán vai trò cho thành viên này. Vui lòng kiểm tra lại.",
+  "assignrole_format": "nn_assignrole <@Thành viên> <Tên vai trò>",
+  "assignrole_rolenotexist": "Vai trò không tồn tại, bạn có thể dùng lệnh `nn_createrole` để tạo vai trò mới!",
+  "assignrole_memberalreadyhasrole": "Người này đã có sẵn vai trò.",
+  "assignrole_roleassigned": "Đã thêm vai trò thành công!",
+  "createrole_no": "Mình không có quyền gán vai trò cho thành viên này. Vui lòng kiểm tra lại.",
+  "createrole_successMessage": "Tên vai trò: ",
+  "createrole_successTitle": "Đã tạo vai trò mới.",
+  "createrole_format": "nn_createrole <màu> <Tên vai trò>",
+  "IPnotdefined": "IP máy chủ chưa được xác định, vui lòng kiểm tra lại và nhập lệnh như: `nn_mcserver IP Port Protocol` [Port-Cổng và Protocol-Giao thức là tùy chọn].",
+  "assignrole_nomention": "Đề cập ai đó để có thể thực thi lệnh.",
+  "assignrole_norolename": "Bạn cần nêu rõ tên Vai Trò muốn tạo!",
+  "hugcommand": "Đề cập ai đó để trao cho họ một cái ôm thật ấm áp nào. :3",
+  "result": "Kết quả",
+  "serverdown": "Đã xảy ra sự cố khi cố gắng tìm nạp dữ liệu của máy chủ. Máy chủ có thể đang ngoại tuyến và / hoặc đang được bảo trì.",
+  "soundboardcommand": "Tệp tin không tồn tại. Bạn có thể gõ **`nn_soundboardhelp`** để xem những soundboard đang tồn tại trong hệ thống nha.:3",
+  "unknownuser": "Không tìm thấy người dùng đó!",
+  "havequeue": "Xin lỗi, bạn không thể sử dụng soundboard khi đang bật nhạc!",
+  "nochannel": "Xin lỗi, bạn cần phải tham gia một kênh thoại để có thể dùng soundboard!",
+  "novideo": "Không tìm thấy video với tiêu đề như vậy!",
+  "novoicechannel": "Bạn cần tham gia vào một kênh thoại!",
+  "notsamevoice": "Bạn cần ở cùng kênh thoại với Bot!",
+  "playhelp": "Cách dùng: PREFIX_play <YouTube URL | Tên Video | Soundcloud URL | Spotify URL>",
+  "fullvoicechannel": "Kênh thoại của bạn hiện đang vượt quá số người cho phép, Bot không thể tham gia!",
+  "notableconnect": "Không thể tham gia phòng, vui lòng kiểm tra lại quyền truy cập của bot!",
+  "notablespeak": "Không thể phát nhạc trong phòng, đứa nào mute tao dzậy? 🥲",
+  "siname": "Tên máy chủ",
+  "siowner": "Chủ sở hữu máy chủ",
+  "siregion": "Vùng máy chủ",
+  "MemberCount": "Số thành viên",
+  "sicustomurl": "URL tùy chỉnh của máy chủ",
+  "siprotect": "Cấp độ xác minh",
+  "sicrative": "Thời gian thành lập của máy chủ",
+  "sides": "Mô tả của máy chủ",
+  "siv": "Xác minh?",
+  "siboost": "Trạng thái tăng cường máy chủ",
+  "prefixsv": "Prefix trong máy chủ này:",
+  "langsv": "Ngôn ngữ hiện tại của bot trong máy chủ:",
+  "language": "Ngôn ngữ:",
+  "online": "Trực tuyến",
+  "offline": "Ngoại tuyến",
+  "idle": "Đang ngủ",
+  "dontdisturb": "Đang bận",
+  "nopermission": "Không có quyền",
+  "nostatusfound": "Không tìm thấy trạng thái",
+  "banlist": "Danh sách người bị cấm",
+  "unban": "Đã bỏ cấm",
+  "fromserver": "khỏi máy chủ",
+  "errorOccurred": "Đã xảy ra lỗi",
+  "timeoutalert": "Bạn đang thao tác quá nhanh",
+  "pleasewait": "Vui lòng chờ",
+  "beforetryingagain": "trước khi thực hiện lại tác vụ trên",
+  "ownerOnly": "Chỉ đội ngũ phát triển mới có thể sử dụng những lệnh này.",
+  "entervalidurl": "Vui lòng nhập vào một URL hợp lệ!",
+  "failedtosearch": "Không thể tìm thấy từ khoá trên",
+  "pleasetryagain": "Vui lòng thử lại",
+  "invalidURL": "Tên miền không hợp lệ.",
+  "dontstealotherbutton": "Đừng có ấn vào nút của người khác nha. Tự kiếm một cái đi.",
+  "days": "ngày",
+  "ago": "trước",
+  "roleinfo": {
+    "author": "Thông Tin",
+    "field1": "**Tên: **",
+    "field2": "**ID: **",
+    "field3": "**Màu: **",
+    "field4": "**Ngày tạo: **",
+    "field5": "**Vị trí: **",
+    "field6": "**Số thành viên: **",
+    "field7": "**Hoisted: **",
+    "field8": "**Có thể ping: **",
+    "field9": "**Quyền: **"
+  },
+  "aki": {
+    "gameEnded": "Trò chơi kết thúc.",
+    "gameEndedDesc": "Trò chơi của bạn đã kết thúc sau khi không hoạt động quá 1 phút.",
+    "question": "Câu hỏi",
+    "progress": "Tiến độ",
+    "pleaseType": "Vui lòng nhập ...",
+    "stopTip": "Bạn cũng có thể gõ \"s\" hoặc \"dừng\" để kết thúc trò chơi của bạn",
+    "yes": "Đúng",
+    "no": "Sai",
+    "dontKnow": "Không biết",
+    "dontKnowNoComma": "Không biết",
+    "probably": "Có lẽ",
+    "probablyNot": "Có lẽ không",
+    "back": "Quay lại",
+    "stop": "Dừng lại",
+    "thinking": "Đang suy nghĩ...",
+    "isThisYourCharacter": "Đây có phải là nhân vật bạn đang nghĩ?",
+    "isThisYourAnimal": "Đây có phải là con vật bạn đang nghĩ?",
+    "isThisYourObject": "Đây có phải là đối tượng bạn đang nghĩ?",
+    "ranking": "Xếp hạng",
+    "noOfQuestions": "Số câu hỏi",
+    "wellPlayed": "Khá đấy!",
+    "guessedRightOneMoreTime": "Tôi lại đoán đúng nữa rồi!",
+    "character": "Nhân vật",
+    "animal": "Động vật",
+    "object": "Sự vật",
+    "defeated": "Bravo! Bạn đã đánh bại tôi ...",
+    "gameForceEnd": "Trò chơi của bạn đã kết thúc!",
+    "startingGame": "Đang bắt đầu trò chơi...",
+    "startingGameDesc": "Trò chơi sẽ bắt đầu trong vài giây ..."
+  },
+  "reason": "Reason:",
+  "roleList": {
+    "owner": "Chủ sở hữu",
+    "administrator": "Quản trị viên",
+    "moderator": "Kiểm duyệt viên",
+    "helper": "Hỗ trợ",
+    "member": "Thành viên"
+  },
+  "enabled": "Bật",
+  "disabled": "Tắt",
+  "music": {
+    "nosongplaying": "🚨 Bot hiện đang không phát nhạc trong bất kì kênh nào.",
+    "stop": "⏹ Đã dừng phát nhạc và xoá danh sách chờ",
+    "autoplay": "Tự động phát",
+    "pause": "⏸ Đã tạm dừng phát âm thanh",
+    "resume": "⏸ Đã tiếp tục phát âm thanh",
+    "skip": "⏭ Đã bỏ qua bài hát hiện tại",
+    "previous": "⏮ Đã quay lại bài hát trước",
+    "noprevious": "🚨 Chờ đã, phía trước có bài nào đâu ta",
+    "nolyricsfound": "🚨 Tui không tìm thấy lời của bài này. Chắc phải chờ đó ^^",
+    "nosongfound": "🚨 Tui không tìm thấy bài hát này. Bồ có nhập đúng lời không đó?",
+    "spotifyrestrictions": "🚨 Spotify hiện đã thay đổi chính sách đối với việc lấy lời bài hát nên việc lấy lời đã bị hạn chế, mong các bạn thông cảm."
+  },
+  "checkGuild": {
+    "embed": {
+      "title": "---Nhận tất cả thông tin về %c trên Shard-Id %x----",
+      "description": "Cảnh báo: Những thông tin này là công khai và có thể truy cập bởi mọi bot. Tôi không tiết lộ dữ liệu nhạy cảm!",
+      "fields": [
+        "Mô tả Server",
+        "Mức độ xác minh:",
+        "Kênh Luật lệ:",
+        "Số lượng thành viên:",
+        "Số lượng kênh:",
+        "Số lượng vai trò:",
+        "Số lượng biểu cảm",
+        "Số lượng nhãn dán",
+        "Số người bị cấm:",
+        "Liên kết mời tuỳ chỉnh",
+        "Đã dùng liên kết mời tuỳ chỉnh:",
+        "Mức giới hạn độ tuổi",
+        "Số lượng nâng cấp máy chủ:",
+        "Cấp tăng cường máy chủ:",
+        "Cộng đồng lớn?",
+        "Số lượng thành viên tối đa:",
+        "Thời hạn không hoạt động:",
+        "Kênh không hoạt động:",
+        "Giới hạn người dùng kênh Video:",
+        "Khu vực ưu tiên:",
+        "Chủ sở hữu",
+        "Bot tham gia vào:"
+      ]
+    }
+  },
+  "cmds": {
+    "translate": {
+      "error": "Xin lỗi, cái này mình không hiểu được 😔",
+      "noinput": "Hãy nhắn đoạn mà bạn cần phiên dịch nhé."
+    },
+    "emoji": {
+      "no_emoji": "Tôi không thể tìm thấy bất kỳ biểu tượng cảm xúc nào. Hãy đảm bảo bạn đã bao gồm biểu tượng cảm xúc hợp lệ.",
+      "not_a_emoji": "Tệp đính kèm không phải là biểu tượng cảm xúc hợp lệ.",
+      "list": "Danh sách biểu tượng cảm xúc",
+      "DeletedTitle": "Biểu tượng cảm xúc đã bị xóa",
+      "CreatedTitle": "Biểu tượng cảm xúc đã được tạo",
+      "UpdatedTitle": "Biểu tượng cảm xúc đã được cập nhật",
+      "OldName": "Tên cũ",
+      "NewName": "Tên mới",
+      "syntax": "Cú pháp",
+      "name": "Tên"
+    },
+    "rolelist": {
+      "noRoles": "Máy chủ không tồn tại bất cứ vai trò nào.",
+      "title": "Danh sách vai trò",
+      "tooManyRoles": "Có quá nhiều vai trò để thể hiện. Vui lòng sử dụng chức năng tìm kiếm để tìm vai trò bạn đang tìm kiếm."
+    },
+    "setupjoinvc": {
+      "alreadySet": "Kênh này đã được đặt làm kênh tham gia để tạo kênh.",
+      "channelNotFound": "Tôi không thể tìm thấy kênh bạn đề cập. Vui lòng đảm bảo bạn đã nhập đúng kênh.",
+      "channel_name": "Tham gia để tạo",
+      "notInThisGuild": "Kênh này phải ở cùng máy chủ với bot.",
+      "notVoiceChannel": "Kênh này phải là kênh thoại.",
+      "success": "Kênh thoại đã được đặt thành công làm kênh tham gia để tạo kênh.",
+      "unableToCreate": "Tôi không thể tạo kênh thoại. Vui lòng kiểm tra quyền của tôi.",
+      "alreadyExists": "Bạn đã có một kênh thoại. Vui lòng xóa nó trước khi tạo một cái mới.",
+      "interface": {
+        "description": "Đây là kênh thoại tạm thời. Nó sẽ bị xóa khi mọi người rời khỏi kênh. Hãy sử dụng các menu thả xuống sau để kiểm soát quyền/cài đặt kênh của bạn.",
+        "title": "Giao diện kênh tạm thời!",
+        "ghost": {
+          "description": "Ẩn kênh khỏi tất cả mọi người.",
+          "title": "Ẩn kênh"
+        },
+        "lock": {
+          "description": "Khóa kênh.",
+          "title": "Khóa"
+        },
+        "unghost": {
+          "description": "Hiển thị kênh với tất cả mọi người.",
+          "title": "Hiện kênh"
+        },
+        "unlock": {
+          "description": "Mở khóa kênh.",
+          "title": "Mở khóa"
+        },
+        "configure": {
+          "description": "Chỉnh sửa cài đặt kênh.",
+          "title": "Cài đặt"
+        },
+        "success": "Đã thực hiện hành động thành công."
+      },
+      "notConfigured": "Kênh thoại chưa được đặt làm tham gia để tạo kênh.",
+      "reset": "Việc tham gia để tạo kênh đã được đặt lại thành công."
+    },
+    "errors": {
+      "invalidSubcommand": "Lệnh phụ không hợp lệ. Vui lòng sử dụng `help` để xem các lệnh phụ có sẵn."
+    },
+    "soundboard": {
+      "fileNotFound": "Tệp bạn đang cố phát không tồn tại.",
+      "noSound": "Không tìm thấy âm thanh với tên đó.",
+      "playing": "Đang phát âm thanh: {{sound}}..."
+    },
+    "lovemeter": {
+      "sameUser": "Bạn không thể đo lường tình yêu với chính mình!",
+      "description": [
+        "Ôi, không có tình yêu gì cả. 😢",
+        "Hmm, có thể có gì đó ở đó. 🤔",
+        "Có vẻ như là một trận đấu hay! 😍",
+        "Wow, hai người bùng cháy quá! 🔥",
+        "Hai bạn là một cặp trời sinh! 💖"
+      ],
+      "noUser2": "Vui lòng chỉ định một người dùng"
+    },
+    "catchthefish": {
+      "lost": "Thua rồi sao, lần sau may mắn hơn nhé!",
+      "title": "Bắt 3 con cá để giành chiến thắng!",
+      "won": "GG! Bạn đã câu được 3 con cá và giành được {{reward}}!"
+    }
+  },
+  "dashboard": {
+    "title": "Trang tổng quan",
+    "captcha": {
+      "require": "Bạn cần xác minh mình là con người để tiếp tục."
+    },
+    "goback": "Quay Lại",
+    "reload": "Tải Lại",
+    "loading": "Đang tải",
+    "login": {
+      "error": "Đã xảy ra lỗi khi cố gắng $t(dashboard.login.signin). Vui lòng thử lại sau.",
+      "redirect": "Đang chuyển hướng...",
+      "signin": "Đăng nhập",
+      "toacc": "$t(dashboard.login.signin) vào tài khoản của bạn",
+      "use_your_account": "Sử dụng tài khoản Discord của bạn",
+      "with_discord": "$t(dashboard.login.signin) với Discord"
+    },
+    "logout": {
+      "signout": "Đăng xuất"
+    },
+    "term_and_condition": {
+      "accept": "Chấp nhận",
+      "condition": "Điều kiện sử dụng",
+      "learn_more": "Tìm hiểu thêm về Điều khoản và Điều kiện của chúng tôi",
+      "term": "Điều khoản dịch vụ"
+    },
+    "apply": "Chấp nhận",
+    "cancel": "Huỷ",
+    "no_search_result": "Không tìm thấy kết quả tìm kiếm nào.",
+    "pages": {
+      "index": {
+        "video_section": {
+          "highlight": "vjp & cute",
+          "content": [
+            "Trang bị máy chủ của bạn với",
+            "{{highlight}} Discord bot nhất từng tồn tại.",
+            "Phục vụ {{members}} ông chủ trong {{servers}} nhà thờ."
+          ]
+        },
+        "p2_section": [
+          {
+            "slash": "Music Player",
+            "title": "🎶 Nghe nhạc cùng bạn bè",
+            "description": "Tận hưởng trải nghiệm nghe nhạc không giới hạn cùng bạn bè và nâng cấp máy chủ của bạn lên một tầm cao mới với tính năng phát nhạc trực tuyến của Bot. Cùng thưởng thức âm nhạc chất lượng cao với bạn bè từ nhiều nền tảng phổ biến. Lựa chọn từ bộ sưu tập đồ sộ các bài hát, album, danh sách phát và chia sẻ những giai điệu yêu thích với cộng đồng của bạn. Dễ dàng thay đổi hàng đợi và điều khiển trình phát ngay trong kênh chat."
+          },
+          {
+            "slash": "Bảng Xếp Hạng Trò Chuyện",
+            "title": "🏆 Cấp độ và XP trong Máy chủ Discord của bạn",
+            "description": "Mọi người đều thích cày cuốc. Sử dụng hệ thống rank chat để thưởng cho những thành viên tích cực nhất trong cộng đồng của bạn. Hãy để họ khoe một thẻ hạng cá nhân hóa mát mẻ và cạnh tranh cho vị trí đầu tiên hùng mạnh trên bảng xếp hạng của bạn! {{endl}} Tự động cấp vai trò khi họ đạt đến một cấp độ nhất định để thưởng cho những thành viên tích cực nhất với quyền truy cập vào các kênh độc quyền và quyền hạn đặc biệt. {{endl}} Cấu hình và yêm quyền một liên kết tùy chỉnh đến bảng xếp hạng của bạn. Cấu hình vai trò để kiếm được nhiều xp hơn, danh sách đen vai trò, và các tính năng cấu hình khác cũng được bao gồm."
+          }
+        ],
+        "p3_section": {
+          "h1": "Application Features",
+          "h2": "We have a simple solution to a complex problem",
+          "items": [
+            {
+              "title": "Components",
+              "description": "Our product is full of customized and extendable components."
+            },
+            {
+              "title": "Utilities",
+              "description": "Powerful utility classes makes it easy to customize your product."
+            },
+            {
+              "title": "Dashboard",
+              "description": "A feature-rich, configurable web dashboard. You can easily enable, disable, and configure everything."
+            },
+            {
+              "title": "Documentation",
+              "description": "Our product is fully documented with instructions and usage examples."
+            },
+            {
+              "title": "Code Snippets",
+              "description": "Use code snippets to easily drop new components into your project."
+            },
+            {
+              "title": "Plugins",
+              "description": "We've implemented powerful third party plugins for added functionality."
+            }
+          ]
+        },
+        "p4_section": {
+          "title": "Get Started!",
+          "h1": "Here's What You Get",
+          "h2": "A wide range of features that are available for free to everyone, every server which can really empower its entertainment.",
+          "fourfeatures": [
+            {
+              "title": "Community Engagement",
+              "description": "Enhance your server's community interaction with our Discord bot. It welcomes new members, facilitates lively discussions, and ensures a vibrant community atmosphere.",
+              "href": "#"
+            },
+            {
+              "title": "Server Management",
+              "description": "Streamline your server management with powerful moderation tools. Our bot can handle user permissions, manage roles, and keep your community safe and organized.",
+              "href": "#"
+            },
+            {
+              "title": "Entertainment Hub",
+              "description": "Turn your server into an entertainment hub with our bot's fun features. Add games, music, and memes to keep your community engaged and entertained.",
+              "href": "#"
+            },
+            {
+              "title": "Customizable Commands",
+              "description": "Tailor the bot to your server's needs with customizable commands. Whether it's for information retrieval or specific server actions, our bot adapts to your requirements.",
+              "href": "#"
+            }
+          ]
+        },
+        "review_section": {
+          "title": "Don’t just take our words for it, see what our users like you are saying"
+        }
+      },
+      "error": {
+        "title": "Có lỗi xảy ra",
+        "description": "Không sao, meo meow ở đây để đánh bạn, à đánh đàn.",
+        "button": "Trở lại"
+      },
+      "maintenance": {
+        "title": "Bảo trì",
+        "description": "Việc bảo trì hệ thống đang diễn ra, cảm phiền các bạn vui lòng quay lại sau."
+      },
+      "emoji": {
+        "title": "Biểu tượng cảm xúc"
+      },
+      "sticker": {
+        "title": "Hình dán"
+      },
+      "stickers_emojis": {
+        "download": {
+          "completed": "Tất cả {{type}} đã sẵn sàng để tải xuống!",
+          "error": {
+            "description": "Đã xảy ra lỗi khi cố tải xuống tất cả {{type}}. Vui lòng thử lại sau.",
+            "title": "Không thể tải xuống tất cả {{type}}"
+          },
+          "generating": "Đang đóng gói các {{type}} cho bạn..."
+        }
+      }
+    },
+    "choices": {
+      "customAddItemText": "Chỉ có thể thêm các giá trị phù hợp với điều kiện cụ thể",
+      "itemSelectText": "Nhấn để chọn",
+      "noChoicesText": "Không có lựa chọn nào để lựa chọn",
+      "uniqueItemText": "Chỉ có thể thêm các giá trị duy nhất"
+    },
+    "add": "Thêm"
+  },
+  "sicreated": "Thời điểm thành lập máy chủ",
+  "guildinfo": {
+    "afkChannel": "Kênh AFK",
+    "afkTimer": "Hẹn giờ AFK",
+    "banCount": "cấm đếm",
+    "boostLevel": "Mức tăng cường máy chủ",
+    "boosts": "Tăng cường máy chủ",
+    "channelCount": "Số kênh",
+    "createdAt": "Được tạo vào lúc",
+    "description": "Sự miêu tả",
+    "emojiCount": "Số lượng biểu tượng cảm xúc",
+    "id": "ID bang hội",
+    "isLarge": "Máy chủ có lớn không?",
+    "joinedAt": "Tôi đã tham gia tại",
+    "maxMembers": "Thành viên tối đa",
+    "memberCount": "Số lượng thành viên",
+    "name": "Tên máy chủ",
+    "nsfwLevel": "Cấp độ NSFW",
+    "owner": "Chủ sở chữ",
+    "ownerID": "ID chủ sở hữu",
+    "preferredLocale": "Vị trí ưa thích",
+    "publicUpdatesChannelId": "ID kênh cập nhật công khai",
+    "roleCount": "Số lượng vai trò",
+    "rulesChannel": "Kênh quy tắc",
+    "stickerCount": "Số lượng nhãn dán",
+    "vanityURL": "Url vanity",
+    "vanityURLUses": "Sử dụng URL ảo",
+    "verificationLevel": "Cấp độ xác minh",
+    "videoChannelUserLimit": "Giới hạn người dùng kênh video"
+  },
+  "economy": {
+    "invalidAmount": "Số tiền không hợp lệ",
+    "insufficientBalance": "Bạn không có đủ số dư để thực hiện hành động này.",
+    "botNotAllowed": "Hmmm, tài khoản bot làm gì có quyền công dân...",
+    "balance": {
+      "description": "Hiện tại bạn có {{object}}.",
+      "title": "Số dư"
+    },
+    "daily": {
+      "fail": "Đã xảy ra lỗi khi cố gắng nhận phần thưởng hàng ngày. Vui lòng thử lại sau.",
+      "claimed": "Bạn đã nhận được phần thưởng hàng ngày của mình. Vui lòng quay lại sau {{time}}.",
+      "success": "Bạn đã nhận được {{object}}!",
+      "24hours": "Bạn chỉ có thể nhận phần thưởng hàng ngày của mình sau mỗi 24 giờ.",
+      "onstreak": "Bạn đang đạt chuỗi {{streak}} thưởng hàng ngày!"
+    },
+    "bank": {
+      "description": "Số dư ngân hàng hiện tại của bạn là {{object}}.",
+      "title": "Ngân hàng"
+    },
+    "transfer": {
+      "success": "{{sender}} đã chuyển thành công {{amount}} sang {{receiver}}.",
+      "selfTransfer": "Bạn không thể chuyển tiền cho chính bản thân."
+    },
+    "beg": {
+      "fail": "Lần này không ai cho bạn gì cả. Chúc may mắn lần sau!",
+      "success": "{{user}} cảm động trước lời khẩn cầu và tặng bạn {{amount}}."
+    },
+    "rep": {
+      "self": "Anh bạn à, thực sự nghĩ rằng được tự khen à?",
+      "success": "Bạn đã khen ngợi {{user}} {{rep}} lần."
+    }
+  },
+  "formoreinfo": "Để biết thêm thông tin, vui lòng sử dụng",
+  "game": {
+    "anotherInstanceRunning": "Bạn phải hoàn thành hoặc kết thúc trò chơi hiện tại của mình (`/endgame`) trước khi bắt đầu trò chơi khác!",
+    "friendPlaying": "Người bạn vừa thách đấu đang bận chơi trò khác!",
+    "limitRunningInstance": "Rất tiếc, mỗi lần chỉ có thể có 1 trò chơi cùng lúc!",
+    "notAllowSameUser": "Bạn không thể chơi với chính mình!",
+    "notSupportMultiplayer": "Rất tiếc, game không hỗ trợ nhiều người chơi!",
+    "starting": "Trò chơi đang bắt đầu...",
+    "baucua": {
+      "buttons": {
+        "cancel": "Hủy bỏ",
+        "confirm": "Xác nhận",
+        "help": "Giúp đỡ"
+      },
+      "introduction": "Chọn một con vật cưng để đặt cược. Nếu thú cưng bạn chọn thắng, bạn sẽ nhận được gấp đôi số tiền đã đặt cược. Nếu không, bạn sẽ thua.",
+      "items": {
+        "bau": "Bầu",
+        "ca": "Cá",
+        "cua": "Cua",
+        "ga": "Gà",
+        "nai": "Nai",
+        "tom": "Tôm"
+      },
+      "maxSideBetReached": "Bạn chỉ có thể đặt cược vào tối đa {{max}} mặt",
+      "promptPlaceBet": "Vui lòng đặt cược vào một trong các mục bên dưới. Số tiền đặt cược tối đa được phép là {{max}}.",
+      "betAmount": "Nhập số tiền mà bạn muốn cược",
+      "invalidroll": "Lượt tung không hợp lệ. Vui lòng thử lại.",
+      "betamount": "Tiền đặt cược",
+      "enteramount": "Nhập vào số tiền bạn muốn đặt cược",
+      "resultAnnouncement": "Bạn đã {{result}} {{amount}}",
+      "nobetPlaced": "Không đặt cược",
+      "placedBet": "Bạn đã đặt cược {{amount}} vào {{roll}}",
+      "lose": "mất",
+      "win": "thắng",
+      "cancelled": "Trò chơi đã bị hủy!"
+    },
+    "noBetsPlaced": "Bạn cần đặt cược vào ít nhất một bên để bắt đầu trò chơi.",
+    "noResponse": "Không nhận được phản hồi, đã hủy thiết lập 😓",
+    "promptBetInput": "Vui lòng nhập số tiền bạn muốn đặt cược vào trò chơi này.",
+    "coinflip": {
+      "title": "Lật Xu",
+      "land": "Đồng xu đã rơi vào mặt ",
+      "lose": "Bạn đã thua ",
+      "win": "Bạn đã thắng "
+    },
+    "slots": {
+      "lose": "{{user}} đã mất {{amount}}",
+      "title": "Máy đánh bạc",
+      "win": "{{user}} đặt cược {{bet}} và thắng {{amount}}"
+    }
+  },
+  "pagination_embed": {
+    "footer": "Sử dụng ⬅️➡️ để điều hướng các trang!",
+    "pagenum": "Trang {{num}}"
+  },
+  "simemcount": "Số lượng thành viên",
+  "invite": "Thêm vào máy chủ",
+  "providequery": "Vui lòng cung cấp một truy vấn!",
+  "cmd_afk_nopermission": "Nếu bạn không thấy nhãn AFK trong tên thì do tôi không có quyền thay đổi nó. Nếu muốn biết thêm thông tin hãy liên lạc với quản trị viên server",
+  "cmd_afk_default": "Tui đang bận xíu, tí quay lại nhá.",
+  "notepad": {
+    "actions": {
+      "delete": "Xóa ghi chú",
+      "edit": "Chỉnh sửa ghi chú",
+      "new": "Ghi chú mới"
+    },
+    "description": "Một ứng dụng đơn giản để lưu trữ ghi chú của bạn. Bạn có thể truy cập ghi chú của mình từ mọi nơi, mọi lúc.",
+    "label": {
+      "close": "Đóng",
+      "description": "Mô tả",
+      "maximize": "Phóng to",
+      "minimize": "Thu nhỏ",
+      "reload": "Tải lại",
+      "save": "Lưu",
+      "search": "Tìm kiếm tất cả ghi chú",
+      "tags": "Thẻ",
+      "title": "Tiêu đề",
+      "wordsCount": "Số chữ hiện tại"
+    },
+    "messages": {
+      "error": {
+        "delete": "Đã xảy ra lỗi khi xóa ghi chú. Vui lòng thử lại.",
+        "fetch": "Đã xảy ra lỗi khi mở ghi chú. Vui lòng thử lại.",
+        "restore": "Đã xảy ra lỗi khi khôi phục ghi chú. Vui lòng thử lại.",
+        "save": "Đã xảy ra lỗi khi lưu ghi chú. Vui lòng thử lại."
+      },
+      "limit": {
+        "button": "Xóa ghi chú",
+        "buttonTitle": "Xóa ghi chú để tạo ghi chú mới.",
+        "description": "Bạn đã đạt đến giới hạn ghi chú tối đa. Vui lòng xóa một số ghi chú để tạo ghi chú mới.",
+        "reached": "Bạn đã đạt đến giới hạn ghi chú tối đa. Vui lòng xóa một số ghi chú để tạo ghi chú mới.",
+        "title": "Đã đạt đến giới hạn ghi chú"
+      },
+      "noNotes": "Bạn chưa có bất kỳ ghi chú nào. Nhấp vào nút phía trên để tạo ghi chú mới.",
+      "noteDeleted": "Ghi chú đã được xóa thành công.",
+      "noteRestored": "Ghi chú được khôi phục thành công.",
+      "noteSaved": "Ghi chú đã được lưu thành công."
+    },
+    "notetopics": {
+      "archived": "Đã lưu trữ",
+      "deleted": "Đã xóa",
+      "favourite": "Yêu thích",
+      "general": "Tất cả",
+      "locked": "Đã khóa",
+      "pinned": "Đã ghim"
+    },
+    "title": "Ghi chú"
+  },
+  "chatbot": {
+    "cooldown": "Gần đây bạn đã gửi quá nhiều tin nhắn, hãy chậm lại!",
+    "error": "Đã xảy ra lỗi không mong muốn khi xử lý yêu cầu của bạn. \nVui lòng thử lại sau.",
+    "tokenExceeded": "Bạn đã vượt quá số lượng mã thông báo tối đa được phép. \nVui lòng thử lại sau."
+  }
+}

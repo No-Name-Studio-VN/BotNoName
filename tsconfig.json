@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2023",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "strict": true /* Enable all strict type-checking options. */,
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+    "baseUrl": "./", // Đường dẫn base cho các import
+    "resolveJsonModule": true /* Enable importing .json files. */,
+    "strictNullChecks": false,
+    "paths": {
+      "@/*": ["src/*"],
+      "~/*": ["./*"]
+    }
+  },
+  "files": ["src/types/global.d.ts"],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

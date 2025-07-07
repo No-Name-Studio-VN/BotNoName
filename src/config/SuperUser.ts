@@ -1,0 +1,2 @@
+export const adminIds = ['382856633652477952']
+export const serverIds = ['425670185089892362', '1018540510719258654']

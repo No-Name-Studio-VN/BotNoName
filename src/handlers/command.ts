@@ -2,7 +2,8 @@ import {
   AutocompleteInteraction,
   ChatInputCommandInteraction,
   ContextMenuCommandInteraction,
-  GuildMember
+  GuildMember,
+  MessageFlags
 } from 'discord.js'
 import type { i18n } from 'i18next'
 
@@ -34,7 +35,7 @@ async function preExecuteChecks(
         canExecute: false,
         errorResponse: interaction.reply({
           content: `You are on cooldown. You can again use the command in \`${timeformat(remaining)}\``,
-          ephemeral: true
+          flags: MessageFlags.Ephemeral
         })
       }
     }

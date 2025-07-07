@@ -1,5 +1,5 @@
 import type { ChatInputCommandInteraction, ContextMenuCommandInteraction } from 'discord.js'
-import { APIEmbedField, ColorResolvable, EmbedBuilder } from 'discord.js'
+import { APIEmbedField, ColorResolvable, EmbedBuilder, MessageFlags } from 'discord.js'
 import { isEmpty } from 'lodash-es'
 
 import { isUrl } from '@/helpers/validation'
@@ -96,7 +96,10 @@ class Embed {
 
   buildMsg() {
     const embed = this.buildEmbed()
-    return { embeds: [embed], ephemeral: this.ephemeral }
+    const baseMsg = { embeds: [embed] }
+    return this.ephemeral 
+      ? { ...baseMsg, flags: MessageFlags.Ephemeral }
+      : baseMsg
   }
 
   /** Send the embed to the interaction

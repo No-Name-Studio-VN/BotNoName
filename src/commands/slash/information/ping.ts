@@ -1,4 +1,4 @@
-import { EmbedBuilder } from 'discord.js'
+import { EmbedBuilder, MessageFlags } from 'discord.js'
 
 import type { SlashCommand } from '@/types/Command'
 
@@ -11,7 +11,7 @@ export default {
   category: 'INFORMATION',
   cooldown: 5,
   execute: async (interaction) => {
-    await interaction.deferReply({ ephemeral: true })
+    await interaction.deferReply({ flags: MessageFlags.Ephemeral })
     const startTime = interaction.createdTimestamp
     const embed = new EmbedBuilder()
       .setThumbnail(interaction.client.user.displayAvatarURL({ size: 1024 }))

@@ -96,10 +96,7 @@ class Embed {
 
   buildMsg() {
     const embed = this.buildEmbed()
-    const baseMsg = { embeds: [embed] }
-    return this.ephemeral 
-      ? { ...baseMsg, flags: MessageFlags.Ephemeral }
-      : baseMsg
+    return { embeds: [embed], flags: this.ephemeral ? MessageFlags.Ephemeral : 0 } // 64 is the ephemeral flag in Discord.js
   }
 
   /** Send the embed to the interaction

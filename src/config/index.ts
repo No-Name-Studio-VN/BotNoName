@@ -1,3 +1,5 @@
+import type { ColorResolvable } from 'discord.js'
+
 export const dashboard = true
 export const interactionCommand = true
 export const messageCommand = true
@@ -8,3 +10,13 @@ export const CACHE_SIZE = {
   USERS: 10000,
   MEMBERS: 10000
 }
+
+export const EMBED_COLORS = {
+  BOT_EMBED: '#068ADD' as ColorResolvable,
+  TRANSPARENT: '#36393F' as ColorResolvable,
+  SUCCESS: '#00A56A' as ColorResolvable,
+  ERROR: '#D61A3C' as ColorResolvable,
+  WARNING: '#F7E919' as ColorResolvable
+}
+
+export const CMDS_PER_PAGE = 10

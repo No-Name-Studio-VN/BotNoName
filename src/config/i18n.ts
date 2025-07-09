@@ -63,6 +63,5 @@ export const allSupportedLangs = supportedLanguages
 export const cacheDuration = CONFIG.cacheDuration
 export const allLanguages = {
   en: { name: 'English', nativeName: 'English', flag: '🇬🇧' },
-  vi: { name: 'Vietnamese', nativeName: 'Tiếng Việt', flag: '🇻🇳' },
-  jp: { name: 'Japanese', nativeName: '日本語', flag: '🇯🇵' }
+  vi: { name: 'Vietnamese', nativeName: 'Tiếng Việt', flag: '🇻🇳' }
 }

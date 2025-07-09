@@ -31,7 +31,7 @@ export interface BaseCommand extends ApplicationCommandData {
   /** Cooldown period in seconds between command uses */
   cooldown: number
   /** Whether the command is restricted to bot owners, defaults to false */
-  ownerOnly?: false
+  ownerOnly?: boolean
   /** Permissions the bot needs to execute this command */
   botPermissions?: PermissionsString[]
   /** Permissions the user needs to execute this command */

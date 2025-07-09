@@ -1,9 +1,11 @@
-import type { Guild, InteractionEditReplyOptions, Message } from 'discord.js'
 import {
   ActionRowBuilder,
   ButtonBuilder,
   ButtonStyle,
   EmbedBuilder,
+  type Guild,
+  type InteractionEditReplyOptions,
+  type Message,
   StringSelectMenuBuilder,
   StringSelectMenuInteraction
 } from 'discord.js'

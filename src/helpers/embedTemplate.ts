@@ -1,5 +1,5 @@
 import type { ChatInputCommandInteraction, ContextMenuCommandInteraction } from 'discord.js'
-import { APIEmbedField, ColorResolvable, EmbedBuilder, MessageFlags } from 'discord.js'
+import { APIEmbedField, ColorResolvable, EmbedBuilder, Message, MessageFlags } from 'discord.js'
 import { isEmpty } from 'lodash-es'
 
 import { isUrl } from '@/helpers/validation'
@@ -33,7 +33,7 @@ interface I18nextTranslation {
  * A utility class for creating and sending Discord embeds
  */
 class Embed {
-  private interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction
+  private interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message
   private title?: string
   private description?: string
   private color?: ColorResolvable
@@ -49,7 +49,10 @@ class Embed {
   /**
    * Creates an embed instance
    */
-  constructor(interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction, options: EmbedOptions = {}) {
+  constructor(
+    interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message,
+    options: EmbedOptions = {}
+  ) {
     const {
       title,
       description,
@@ -104,7 +107,8 @@ class Embed {
    */
   async send(): Promise<void> {
     try {
-      const replyMethod = this.method === 'edit' ? 'editReply' : 'reply'
+      const replyMethod =
+        this.method === 'edit' ? (this.interaction instanceof Message ? 'reply' : 'editReply') : 'reply'
       const msg = await this.interaction[replyMethod](this.buildMsg())
 
       if (this.duration > 0) {
@@ -124,7 +128,7 @@ class Embed {
    * Sends an error embed with default error styling
    */
   static error(
-    interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction,
+    interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message,
     options: EmbedOptions = {}
   ): Promise<void> {
     const embed = new Embed(interaction, {
@@ -140,7 +144,7 @@ class Embed {
    * Sends a success embed with default success styling
    */
   static success(
-    interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction,
+    interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message,
     options: EmbedOptions = {}
   ): Promise<void> {
     const embed = new Embed(interaction, {
@@ -155,7 +159,7 @@ class Embed {
    * Sends an embed indicating the bot lacks required permissions
    */
   static botNoPermission(
-    interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction,
+    interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message,
     i18next: I18nextTranslation,
     permission: string = 'N/A'
   ): Promise<void> {
@@ -170,7 +174,7 @@ class Embed {
    * Sends an embed indicating the user lacks required permissions
    */
   static userNoPermission(
-    interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction,
+    interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message,
     i18next: I18nextTranslation,
     permission: string = 'N/A'
   ): Promise<void> {
@@ -184,7 +188,9 @@ class Embed {
   /**
    * Sends an embed indicating no user was found in the guild
    */
-  static noUserInGuild(interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction): Promise<void> {
+  static noUserInGuild(
+    interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message
+  ): Promise<void> {
     return this.error(interaction, {
       description: 'There is no mentioned user in the guild'
     })
@@ -197,7 +203,7 @@ class Embed {
  * @deprecated Use Embed.error() instead
  */
 function ErrorEmbed(
-  interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction,
+  interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message,
   options: EmbedOptions = {}
 ): Promise<void> {
   return Embed.error(interaction, options)
@@ -207,7 +213,7 @@ function ErrorEmbed(
  * @deprecated Use Embed.success() instead
  */
 function SuccessEmbed(
-  interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction,
+  interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message,
   options: EmbedOptions = {}
 ): Promise<void> {
   return Embed.success(interaction, options)
@@ -217,7 +223,7 @@ function SuccessEmbed(
  * @deprecated Use Embed.botNoPermission() instead
  */
 function BotNoPermissionEmbed(
-  interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction,
+  interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message,
   i18next: I18nextTranslation,
   { permission = 'N/A' }: { permission?: string } = {}
 ): Promise<void> {
@@ -228,7 +234,7 @@ function BotNoPermissionEmbed(
  * @deprecated Use Embed.userNoPermission() instead
  */
 function UserNoPermissionEmbed(
-  interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction,
+  interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message,
   i18next: I18nextTranslation,
   { permission = 'N/A' }: { permission?: string } = {}
 ): Promise<void> {
@@ -238,7 +244,9 @@ function UserNoPermissionEmbed(
 /**
  * @deprecated Use Embed.noUserInGuild() instead
  */
-function noUserInGuild(interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction): Promise<void> {
+function noUserInGuild(
+  interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message
+): Promise<void> {
   return Embed.noUserInGuild(interaction)
 }
 

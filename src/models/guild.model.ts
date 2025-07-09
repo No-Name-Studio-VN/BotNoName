@@ -20,6 +20,11 @@ export interface GuildDocument extends mongoose.Document {
     plan: string
   }
   LevelingUserNotify: boolean
+  chatbot: {
+    channelId: string
+    toggle: boolean
+    language: string
+  }
   moderation: {
     logChannelId: string
     mute_role: string
@@ -77,6 +82,8 @@ export interface GuildDocument extends mongoose.Document {
       modlog_channel: string
     }
   }
+  createdAt: Date
+  updatedAt: Date
 }
 
 const guildSchema = new mongoose.Schema(
@@ -115,6 +122,17 @@ const guildSchema = new mongoose.Schema(
     LevelingUserNotify: {
       type: Boolean,
       default: false
+    },
+    chatbot: {
+      channelId: String,
+      toggle: {
+        type: Boolean,
+        default: false
+      },
+      language: {
+        type: String,
+        default: 'vi'
+      }
     },
     moderation: {
       logChannelId: String,

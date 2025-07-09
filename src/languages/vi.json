@@ -18,18 +18,11 @@
   "Usage": "Cách dùng",
   "punch": "Nếu phải tôi tôi đấm $user mấy nhát.",
   "hugging": "đang ôm",
-  "assignrole_no": "Mình không có vai trò để thực thi quyền gán vai trò cho thành viên này. Vui lòng kiểm tra lại.",
-  "assignrole_format": "nn_assignrole <@Thành viên> <Tên vai trò>",
-  "assignrole_rolenotexist": "Vai trò không tồn tại, bạn có thể dùng lệnh `nn_createrole` để tạo vai trò mới!",
-  "assignrole_memberalreadyhasrole": "Người này đã có sẵn vai trò.",
-  "assignrole_roleassigned": "Đã thêm vai trò thành công!",
   "createrole_no": "Mình không có quyền gán vai trò cho thành viên này. Vui lòng kiểm tra lại.",
   "createrole_successMessage": "Tên vai trò: ",
   "createrole_successTitle": "Đã tạo vai trò mới.",
   "createrole_format": "nn_createrole <màu> <Tên vai trò>",
   "IPnotdefined": "IP máy chủ chưa được xác định, vui lòng kiểm tra lại và nhập lệnh như: `nn_mcserver IP Port Protocol` [Port-Cổng và Protocol-Giao thức là tùy chọn].",
-  "assignrole_nomention": "Đề cập ai đó để có thể thực thi lệnh.",
-  "assignrole_norolename": "Bạn cần nêu rõ tên Vai Trò muốn tạo!",
   "hugcommand": "Đề cập ai đó để trao cho họ một cái ôm thật ấm áp nào. :3",
   "result": "Kết quả",
   "serverdown": "Đã xảy ra sự cố khi cố gắng tìm nạp dữ liệu của máy chủ. Máy chủ có thể đang ngoại tuyến và / hoặc đang được bảo trì.",
@@ -286,115 +279,6 @@
     "apply": "Chấp nhận",
     "cancel": "Huỷ",
     "no_search_result": "Không tìm thấy kết quả tìm kiếm nào.",
-    "pages": {
-      "index": {
-        "video_section": {
-          "highlight": "vjp & cute",
-          "content": [
-            "Trang bị máy chủ của bạn với",
-            "{{highlight}} Discord bot nhất từng tồn tại.",
-            "Phục vụ {{members}} ông chủ trong {{servers}} nhà thờ."
-          ]
-        },
-        "p2_section": [
-          {
-            "slash": "Music Player",
-            "title": "🎶 Nghe nhạc cùng bạn bè",
-            "description": "Tận hưởng trải nghiệm nghe nhạc không giới hạn cùng bạn bè và nâng cấp máy chủ của bạn lên một tầm cao mới với tính năng phát nhạc trực tuyến của Bot. Cùng thưởng thức âm nhạc chất lượng cao với bạn bè từ nhiều nền tảng phổ biến. Lựa chọn từ bộ sưu tập đồ sộ các bài hát, album, danh sách phát và chia sẻ những giai điệu yêu thích với cộng đồng của bạn. Dễ dàng thay đổi hàng đợi và điều khiển trình phát ngay trong kênh chat."
-          },
-          {
-            "slash": "Bảng Xếp Hạng Trò Chuyện",
-            "title": "🏆 Cấp độ và XP trong Máy chủ Discord của bạn",
-            "description": "Mọi người đều thích cày cuốc. Sử dụng hệ thống rank chat để thưởng cho những thành viên tích cực nhất trong cộng đồng của bạn. Hãy để họ khoe một thẻ hạng cá nhân hóa mát mẻ và cạnh tranh cho vị trí đầu tiên hùng mạnh trên bảng xếp hạng của bạn! {{endl}} Tự động cấp vai trò khi họ đạt đến một cấp độ nhất định để thưởng cho những thành viên tích cực nhất với quyền truy cập vào các kênh độc quyền và quyền hạn đặc biệt. {{endl}} Cấu hình và yêm quyền một liên kết tùy chỉnh đến bảng xếp hạng của bạn. Cấu hình vai trò để kiếm được nhiều xp hơn, danh sách đen vai trò, và các tính năng cấu hình khác cũng được bao gồm."
-          }
-        ],
-        "p3_section": {
-          "h1": "Application Features",
-          "h2": "We have a simple solution to a complex problem",
-          "items": [
-            {
-              "title": "Components",
-              "description": "Our product is full of customized and extendable components."
-            },
-            {
-              "title": "Utilities",
-              "description": "Powerful utility classes makes it easy to customize your product."
-            },
-            {
-              "title": "Dashboard",
-              "description": "A feature-rich, configurable web dashboard. You can easily enable, disable, and configure everything."
-            },
-            {
-              "title": "Documentation",
-              "description": "Our product is fully documented with instructions and usage examples."
-            },
-            {
-              "title": "Code Snippets",
-              "description": "Use code snippets to easily drop new components into your project."
-            },
-            {
-              "title": "Plugins",
-              "description": "We've implemented powerful third party plugins for added functionality."
-            }
-          ]
-        },
-        "p4_section": {
-          "title": "Get Started!",
-          "h1": "Here's What You Get",
-          "h2": "A wide range of features that are available for free to everyone, every server which can really empower its entertainment.",
-          "fourfeatures": [
-            {
-              "title": "Community Engagement",
-              "description": "Enhance your server's community interaction with our Discord bot. It welcomes new members, facilitates lively discussions, and ensures a vibrant community atmosphere.",
-              "href": "#"
-            },
-            {
-              "title": "Server Management",
-              "description": "Streamline your server management with powerful moderation tools. Our bot can handle user permissions, manage roles, and keep your community safe and organized.",
-              "href": "#"
-            },
-            {
-              "title": "Entertainment Hub",
-              "description": "Turn your server into an entertainment hub with our bot's fun features. Add games, music, and memes to keep your community engaged and entertained.",
-              "href": "#"
-            },
-            {
-              "title": "Customizable Commands",
-              "description": "Tailor the bot to your server's needs with customizable commands. Whether it's for information retrieval or specific server actions, our bot adapts to your requirements.",
-              "href": "#"
-            }
-          ]
-        },
-        "review_section": {
-          "title": "Don’t just take our words for it, see what our users like you are saying"
-        }
-      },
-      "error": {
-        "title": "Có lỗi xảy ra",
-        "description": "Không sao, meo meow ở đây để đánh bạn, à đánh đàn.",
-        "button": "Trở lại"
-      },
-      "maintenance": {
-        "title": "Bảo trì",
-        "description": "Việc bảo trì hệ thống đang diễn ra, cảm phiền các bạn vui lòng quay lại sau."
-      },
-      "emoji": {
-        "title": "Biểu tượng cảm xúc"
-      },
-      "sticker": {
-        "title": "Hình dán"
-      },
-      "stickers_emojis": {
-        "download": {
-          "completed": "Tất cả {{type}} đã sẵn sàng để tải xuống!",
-          "error": {
-            "description": "Đã xảy ra lỗi khi cố tải xuống tất cả {{type}}. Vui lòng thử lại sau.",
-            "title": "Không thể tải xuống tất cả {{type}}"
-          },
-          "generating": "Đang đóng gói các {{type}} cho bạn..."
-        }
-      }
-    },
     "choices": {
       "customAddItemText": "Chỉ có thể thêm các giá trị phù hợp với điều kiện cụ thể",
       "itemSelectText": "Nhấn để chọn",
@@ -523,59 +407,19 @@
   "simemcount": "Số lượng thành viên",
   "invite": "Thêm vào máy chủ",
   "providequery": "Vui lòng cung cấp một truy vấn!",
-  "cmd_afk_nopermission": "Nếu bạn không thấy nhãn AFK trong tên thì do tôi không có quyền thay đổi nó. Nếu muốn biết thêm thông tin hãy liên lạc với quản trị viên server",
-  "cmd_afk_default": "Tui đang bận xíu, tí quay lại nhá.",
-  "notepad": {
-    "actions": {
-      "delete": "Xóa ghi chú",
-      "edit": "Chỉnh sửa ghi chú",
-      "new": "Ghi chú mới"
-    },
-    "description": "Một ứng dụng đơn giản để lưu trữ ghi chú của bạn. Bạn có thể truy cập ghi chú của mình từ mọi nơi, mọi lúc.",
-    "label": {
-      "close": "Đóng",
-      "description": "Mô tả",
-      "maximize": "Phóng to",
-      "minimize": "Thu nhỏ",
-      "reload": "Tải lại",
-      "save": "Lưu",
-      "search": "Tìm kiếm tất cả ghi chú",
-      "tags": "Thẻ",
-      "title": "Tiêu đề",
-      "wordsCount": "Số chữ hiện tại"
-    },
-    "messages": {
-      "error": {
-        "delete": "Đã xảy ra lỗi khi xóa ghi chú. Vui lòng thử lại.",
-        "fetch": "Đã xảy ra lỗi khi mở ghi chú. Vui lòng thử lại.",
-        "restore": "Đã xảy ra lỗi khi khôi phục ghi chú. Vui lòng thử lại.",
-        "save": "Đã xảy ra lỗi khi lưu ghi chú. Vui lòng thử lại."
-      },
-      "limit": {
-        "button": "Xóa ghi chú",
-        "buttonTitle": "Xóa ghi chú để tạo ghi chú mới.",
-        "description": "Bạn đã đạt đến giới hạn ghi chú tối đa. Vui lòng xóa một số ghi chú để tạo ghi chú mới.",
-        "reached": "Bạn đã đạt đến giới hạn ghi chú tối đa. Vui lòng xóa một số ghi chú để tạo ghi chú mới.",
-        "title": "Đã đạt đến giới hạn ghi chú"
-      },
-      "noNotes": "Bạn chưa có bất kỳ ghi chú nào. Nhấp vào nút phía trên để tạo ghi chú mới.",
-      "noteDeleted": "Ghi chú đã được xóa thành công.",
-      "noteRestored": "Ghi chú được khôi phục thành công.",
-      "noteSaved": "Ghi chú đã được lưu thành công."
-    },
-    "notetopics": {
-      "archived": "Đã lưu trữ",
-      "deleted": "Đã xóa",
-      "favourite": "Yêu thích",
-      "general": "Tất cả",
-      "locked": "Đã khóa",
-      "pinned": "Đã ghim"
-    },
-    "title": "Ghi chú"
+  "afk": {
+    "nopermission": "Nếu bạn không thấy nhãn AFK trong tên thì do tôi không có quyền thay đổi nó. Nếu muốn biết thêm thông tin hãy liên lạc với quản trị viên server.",
+    "default": "Tui đang bận xíu, tí quay lại nhá."
   },
   "chatbot": {
     "cooldown": "Gần đây bạn đã gửi quá nhiều tin nhắn, hãy chậm lại!",
     "error": "Đã xảy ra lỗi không mong muốn khi xử lý yêu cầu của bạn. \nVui lòng thử lại sau.",
     "tokenExceeded": "Bạn đã vượt quá số lượng mã thông báo tối đa được phép. \nVui lòng thử lại sau."
+  },
+  "leveling": {
+    "botNoLevelingData": "Xin lỗi bot không dùng được cái này nhé.",
+    "noGuildLevelingData": "Máy chủ này chưa có dữ liệu cấp độ nào. Có thể bạn có thể bắt đầu trò chuyện ngay bây giờ :)",
+    "cardTitle": "Thẻ cấp độ của `{{username}}` trong `{{guildName}}`",
+    "leaderboardTip": "Sử dụng /leaderboard để xem thứ hạng của bạn so với những người khác <:nn_wtf:855080052974420028>"
   }
 }

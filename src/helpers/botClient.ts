@@ -11,6 +11,7 @@ export class BotClient extends Client {
   messageCommands: Collection<string, SlashCommand> = new Collection()
   slashCommands: Collection<string, SlashCommand> = new Collection()
   contextCommands: Collection<string, ContextCommand> = new Collection()
+  recent: Set<string> = new Set() // For XP cooldowns
 
   constructor(options: ClientOptions = DiscordClientConfig) {
     if (BotClient.#instance) {

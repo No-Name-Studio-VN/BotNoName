@@ -18,18 +18,11 @@
   "Usage": "Usage",
   "punch": "If I were you, I would punch $user.",
   "hugging": "is hugging",
-  "assignrole_rolenotexist": "This role does not exist at all!",
-  "assignrole_memberalreadyhasrole": "The member already has this role!",
-  "assignrole_roleassigned": "Role successfully assigned!",
-  "assignrole_no": "Unfortunately, I do not have the permission to give this member the role! Please check my permission!",
-  "assignrole_format": "nn_assignrole <@User> <name of the role>",
   "createrole_successMessage": "Name of the role: ",
   "createrole_no": "Unfortunately, I do not have the permission to give this member the role! Please check my permission!",
   "createrole_successTitle": "Role was created!",
   "createrole_format": "nn_createrole <#color> <name of the role>",
   "IPnotdefined": "The server IP is not defined, please check again and type the command like: `nn_mcserver IP Port Protocol` [Port and Protocol is optional].",
-  "assignrole_nomention": "Mention someone to execute the command.",
-  "assignrole_norolename": "You must specify the name of the role!",
   "hugcommand": "Mention someone to give them a warm hug. :3",
   "result": "Result",
   "serverdown": "There was an issue while trying to fetch the server’s data. The server is probably offline and/or in maintenance.",
@@ -413,170 +406,21 @@
       "condition": "Conditions of Use",
       "accept": "Accept",
       "learn_more": "Learn more about our Terms and Conditions"
-    },
-    "pages": {
-      "index": {
-        "video_section": {
-          "highlight": "powerful & adorable",
-          "content": [
-            "Kick start your server with",
-            "Most {{highlight}} Discord bot ever existed.",
-            "Serving {{members}} members in {{servers}} servers."
-          ]
-        },
-        "p2_section": [
-          {
-            "slash": "Music Player",
-            "title": "🎶 Listen to music with your friends",
-            "description": "Enjoy a seamless listening experience and take your server to the next level with our music streaming feature. Bring high quality music to your server and listen with your friends, all from a wide range of popular platforms. Choose from an extensive collection of songs, albums, and playlists, and share your favorite tunes with your community. Easily to queue up songs and control playback, all from the comfort of your voice channel."
-          },
-          {
-            "slash": "Chat Leaderboard",
-            "title": "🏆 Levels and XP in your Discord Server",
-            "description": "Everyone loves to grind. Use our leveling system to identify and reward the most active members of your community. Let them show off a cool customizable rank card and compete for the mighty first spot of your leaderboard! {{endl}} Automatically give roles when they reach a certain level to reward the most active members with access to exclusive channels and privileged permissions. {{endl}} Configure and claim a custom link to your leaderboard. Configure roles to earn more xp, blacklist roles, and other configuration features are also included."
-          }
-        ],
-        "p3_section": {
-          "h1": "Application Features",
-          "h2": "We have a simple solution to a complex problem",
-          "items": [
-            {
-              "title": "Components",
-              "description": "Our product is full of customized and extendable components."
-            },
-            {
-              "title": "Utilities",
-              "description": "Powerful utility classes makes it easy to customize your product."
-            },
-            {
-              "title": "Dashboard",
-              "description": "A feature-rich, configurable web dashboard. You can easily enable, disable, and configure everything."
-            },
-            {
-              "title": "Documentation",
-              "description": "Our product is fully documented with instructions and usage examples."
-            },
-            {
-              "title": "Code Snippets",
-              "description": "Use code snippets to easily drop new components into your project."
-            },
-            {
-              "title": "Plugins",
-              "description": "We've implemented powerful third party plugins for added functionality."
-            }
-          ]
-        },
-        "p4_section": {
-          "title": "Get Started!",
-          "h1": "Here's What You Get",
-          "h2": "A wide range of features that are available for free to everyone, every server which can really empower its entertainment.",
-          "fourfeatures": [
-            {
-              "title": "Community Engagement",
-              "description": "Enhance your server's community interaction with our Discord bot. It welcomes new members, facilitates lively discussions, and ensures a vibrant community atmosphere.",
-              "href": "#"
-            },
-            {
-              "title": "Server Management",
-              "description": "Streamline your server management with powerful moderation tools. Our bot can handle user permissions, manage roles, and keep your community safe and organized.",
-              "href": "#"
-            },
-            {
-              "title": "Entertainment Hub",
-              "description": "Turn your server into an entertainment hub with our bot's fun features. Add games, music, and memes to keep your community engaged and entertained.",
-              "href": "#"
-            },
-            {
-              "title": "Customizable Commands",
-              "description": "Tailor the bot to your server's needs with customizable commands. Whether it's for information retrieval or specific server actions, our bot adapts to your requirements.",
-              "href": "#"
-            }
-          ]
-        },
-        "review_section": {
-          "title": "Don’t just take our words for it, see what our users like you are saying"
-        }
-      },
-      "error": {
-        "title": "Unknown error!",
-        "description": "But relax! Our cat is here to play you some music.",
-        "button": "Back Home"
-      },
-      "maintenance": {
-        "title": "Under Maintenance",
-        "description": "We're undergoing scheduled update and dashboard will be available shortly. Thanks for your patience!"
-      },
-      "stickers_emojis": {
-        "download": {
-          "error": {
-            "title": "Unable to download all {{type}}s",
-            "description": "An error occurred while trying to download all {{type}}s. Please try again."
-          },
-          "generating": "Generating your {{type}}...",
-          "completed": "All {{type}}s are ready for download!"
-        }
-      },
-      "sticker": {
-        "title": "Sticker"
-      },
-      "emoji": {
-        "title": "Emoji"
-      }
     }
   },
-  "cmd_afk_nopermission": "If you can't see the AFK tag in your username, it is because I don't have the permission to change it. For more info, contact the server managers.",
-  "cmd_afk_default": "I am AFK. I will reply to you when I am back.",
-  "notepad": {
-    "title": "Notepad",
-    "description": "A simple notepad to store your notes. You can access your notes from anywhere, anytime.",
-    "actions": {
-      "new": "New Note",
-      "edit": "Edit Note",
-      "delete": "Delete Note"
-    },
-    "label": {
-      "search": "Search all notes",
-      "title": "Title",
-      "description": "Description",
-      "tags": "Tags",
-      "save": "Save",
-      "minimize": "Minimize",
-      "maximize": "Maximize",
-      "reload": "Reload",
-      "close": "Close",
-      "wordsCount": "Words in notepad"
-    },
-    "messages": {
-      "noNotes": "You don't have any notes yet. Click the button above to create a new note.",
-      "noteSaved": "Note saved successfully.",
-      "noteDeleted": "Note deleted successfully.",
-      "noteRestored": "Note restored successfully.",
-      "error": {
-        "save": "An error occurred while saving the note. Please try again.",
-        "delete": "An error occurred while deleting the note. Please try again.",
-        "restore": "An error occurred while restoring the note. Please try again.",
-        "fetch": "An error occurred while fetching the notes. Please try again."
-      },
-      "limit": {
-        "reached": "You have reached the maximum limit of notes. Please delete some notes to create new ones.",
-        "title": "Note Limit Reached",
-        "description": "You have reached the maximum limit of notes. Please delete some notes to create new ones.",
-        "button": "Delete Note",
-        "buttonTitle": "Delete a note to create a new one."
-      }
-    },
-    "notetopics": {
-      "general": "General",
-      "favourite": "Favourite",
-      "pinned": "Pinned",
-      "locked": "Locked",
-      "archived": "Archived",
-      "deleted": "Deleted"
-    }
+  "afk": {
+    "nopermission": "If you can't see the AFK tag in your username, it is because I don't have the permission to change it. For more info, contact the server managers.",
+    "default": "I am AFK. I will reply to you when I am back."
   },
   "chatbot": {
     "cooldown": "You have sent so much message recently, please slow down!",
     "error": "An unexpected error occurred while processing your request. Please try again later.",
     "tokenExceeded": "You have exceeded the maximum number of tokens allowed. Please try again later."
+  },
+  "leveling": {
+    "botNoLevelingData": "Sorry, bots cannot have leveling data.",
+    "noGuildLevelingData": "This guild doesn't have any leveling data yet. Maybe you can start chatting now :)",
+    "cardTitle": "Leveling Card of `{{username}}` in `{{guildName}}`",
+    "leaderboardTip": "Use /leaderboard to see how you rank against others <:nn_wtf:855080052974420028>"
   }
 }

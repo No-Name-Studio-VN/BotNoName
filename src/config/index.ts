@@ -20,3 +20,6 @@ export const EMBED_COLORS = {
 }
 
 export const CMDS_PER_PAGE = 10
+export const copyright = '© 2025 No Name Studio. All rights reserved.'
+export const invite_link = 'https://discord.com/application-directory/736915194772586598'
+export const prefix = 'nn_'

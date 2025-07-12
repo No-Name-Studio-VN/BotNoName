@@ -7,7 +7,7 @@ import path from 'path'
 
 import * as CONFIG from '@/config/chatbot'
 import type { BotClient } from '@/helpers/botClient'
-import { ErrorEmbed } from '@/helpers/embedTemplate'
+import Embed from '@/helpers/embedTemplate'
 import { i18nInit } from '@/helpers/i18n'
 import type { ChatbotResponse } from '@/types/chatbot'
 
@@ -36,7 +36,7 @@ export default async function (client: BotClient, message: OmitPartialGroupDMCha
   try {
     const remaining = await getRemainingCooldown(message.author.id)
     if (remaining > 0) {
-      return ErrorEmbed(message, {
+      return Embed.error(message, {
         description: i18next.t('chatbot.cooldown'),
         duration: 5000,
         method: 'reply'
@@ -55,7 +55,7 @@ export default async function (client: BotClient, message: OmitPartialGroupDMCha
       : handleDefaultInput(message, data, i18next)
   } catch (error) {
     logger.error('Chatbot handler error:', error)
-    return ErrorEmbed(message, {
+    return Embed.error(message, {
       description: i18next.t('chatbot.error'),
       method: 'reply'
     })
@@ -67,7 +67,7 @@ async function handleHdRepInput(message: Message, data: ChatbotResponse) {
 
   const parts = input.split('rep:')
   if (parts.length < 2) {
-    return ErrorEmbed(message, {
+    return Embed.error(message, {
       description: 'Sai cú pháp rồi bạn ơi.',
       method: 'reply'
     })
@@ -77,7 +77,7 @@ async function handleHdRepInput(message: Message, data: ChatbotResponse) {
   const repContent = parts[1]?.trim()
 
   if (isEmpty(hdContent) || isEmpty(repContent)) {
-    return ErrorEmbed(message, {
+    return Embed.error(message, {
       description: 'Sai cú pháp rồi bạn ơi.',
       method: 'reply'
     })
@@ -97,7 +97,7 @@ async function handleHdRepInput(message: Message, data: ChatbotResponse) {
     return message.reply(response)
   } catch (error) {
     logger.error('Failed to save chatbot data:', JSON.stringify(error))
-    return ErrorEmbed(message, {
+    return Embed.error(message, {
       description: 'Có lỗi xảy ra khi ghi dữ liệu.',
       method: 'reply',
       ephemeral: false
@@ -125,7 +125,7 @@ async function handleChatResponse(message: Message, i18next: i18n) {
   try {
     const tokenCount = await checkTokenCount(message.content)
     if (tokenCount > CONFIG.MAX_TOKENS) {
-      return ErrorEmbed(message, {
+      return Embed.error(message, {
         description: i18next.t('chatbot.tokenExceeded'),
         method: 'reply',
         ephemeral: false

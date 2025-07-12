@@ -11,7 +11,7 @@ import { adminIds } from '@/config/SuperUser'
 import { cacheGet, cacheSet } from '@/handlers/redis'
 import type { BotClient } from '@/helpers/botClient'
 import { handleError } from '@/helpers/botUtils'
-import { BotNoPermissionEmbed, ErrorEmbed, UserNoPermissionEmbed } from '@/helpers/embedTemplate'
+import Embed from '@/helpers/embedTemplate'
 import { parsePermissions } from '@/helpers/permissions'
 import { timeformat } from '@/helpers/time'
 import { isAdmin } from '@/helpers/validation'
@@ -46,7 +46,7 @@ async function preExecuteChecks(
   if (command.ownerOnly && !adminIds.includes(interaction.user.id)) {
     return {
       canExecute: false,
-      errorResponse: ErrorEmbed(interaction, {
+      errorResponse: Embed.error(interaction, {
         description: i18next.t('ownerOnly'),
         footer: i18next.t('errorOccurred')
       })
@@ -129,7 +129,7 @@ async function validateGuildCommand(
     if (cmdslist?.commands.find((i) => i.name === command.name.toLowerCase())?.status === false) {
       return {
         canExecute: false,
-        errorResponse: ErrorEmbed(interaction, { description: i18next.t('commandDisabled') })
+        errorResponse: Embed.error(interaction, { description: i18next.t('commandDisabled') })
       }
     }
   }
@@ -142,9 +142,7 @@ async function validateGuildCommand(
     if (!hasPermission && !isOwner) {
       return {
         canExecute: false,
-        errorResponse: UserNoPermissionEmbed(interaction, i18next, {
-          permission: parsePermissions(command.userPermissions)
-        })
+        errorResponse: Embed.userNoPermission(interaction, i18next, parsePermissions(command.userPermissions))
       }
     }
   }
@@ -154,9 +152,7 @@ async function validateGuildCommand(
     if (!guild.members.me?.permissions.has(command.botPermissions)) {
       return {
         canExecute: false,
-        errorResponse: BotNoPermissionEmbed(interaction, i18next, {
-          permission: parsePermissions(command.botPermissions)
-        })
+        errorResponse: Embed.botNoPermission(interaction, i18next, parsePermissions(command.botPermissions))
       }
     }
   }

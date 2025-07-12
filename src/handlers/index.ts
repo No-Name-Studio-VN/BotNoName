@@ -21,7 +21,7 @@ const SLASH_COMMANDS_BASE_DIR = path.resolve(process.cwd(), 'src/commands/slash'
 // --- Cached Values ---
 const commandLocalizationsMap = new Map(cmdI18n.map((item) => [item.id, item]))
 
-const isScriptFile = (file: string): boolean => file.endsWith('.js') || file.endsWith('.ts')
+const isScriptFile = (file: string): boolean => file.endsWith('.ts')
 
 /**
  * Loads regular event handlers from a specified directory.

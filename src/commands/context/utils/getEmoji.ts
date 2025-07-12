@@ -3,7 +3,7 @@ import { bold, hyperlink, orderedList } from '@discordjs/formatters'
 import { EmbedBuilder } from 'discord.js'
 import { isEmpty } from 'lodash-es'
 
-import { ErrorEmbed } from '@/helpers/embedTemplate'
+import Embed from '@/helpers/embedTemplate'
 import { parseEmojis } from '@/helpers/emoji'
 import type { MessageContextCommand } from '@/types/Command'
 
@@ -18,9 +18,9 @@ export default {
     await interaction.deferReply()
 
     const messageContent = interaction.targetMessage.content
-    if (isEmpty(messageContent)) return ErrorEmbed(interaction, { description: i18next.t('cmds.emoji.no_emoji') })
+    if (isEmpty(messageContent)) return Embed.error(interaction, { description: i18next.t('cmds.emoji.no_emoji') })
     const links = await parseEmojis(messageContent)
-    if (!links) return ErrorEmbed(interaction, { description: i18next.t('cmds.emoji.no_emoji') })
+    if (!links) return Embed.error(interaction, { description: i18next.t('cmds.emoji.no_emoji') })
 
     const description = links.map((item, i) => {
       return `${item.tag} - ${hyperlink(bold(item.name), item.link)}`

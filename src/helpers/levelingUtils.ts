@@ -12,6 +12,7 @@ import { getGuildLeveling, getUserLeveling } from '@/services/leveling.service'
 import type { BotClient } from './botClient'
 import { getRandomInt } from './botUtils'
 import { safeSend } from './extenders/message'
+import { getUserName } from './user'
 import { isCallingCommand } from './validation'
 
 const CooldownRate = 15000 // 15 seconds
@@ -81,7 +82,7 @@ export async function ableToAddXP(
   }
 
   // Retrieve settings and check for command messages
-  const { prefix = DefaultPrefix } = await getGuild(guild)
+  const { prefix = DefaultPrefix } = await getGuild({ _id: guild.id })
   if (message.content.startsWith(prefix) || isCallingCommand(message, prefix)) {
     return false
   }
@@ -207,7 +208,7 @@ export async function createRankCard(
     .setRequiredXP(neededXP)
     .setLevel(target.level)
     .setRank(rank)
-    .setUsername(targetUser.user.username)
+    .setUsername(getUserName(targetUser.user))
     .setStatus(targetUser.presence?.status ?? 'dnd')
     .setBackground(bg)
 

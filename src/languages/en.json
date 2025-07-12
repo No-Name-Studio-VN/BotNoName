@@ -225,6 +225,7 @@
       "description": "Your current bank balance is {{object}}."
     },
     "transfer": {
+      "title": "Transfer Successfully",
       "success": "{{sender}} have successfully transferred {{amount}} to {{receiver}}.",
       "selfTransfer": "Sorry, you cannot transfer money to yourself."
     },

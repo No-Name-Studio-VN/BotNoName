@@ -2512,6 +2512,15 @@ export const cmdI18n = [
         description: {
           vi: 'Số tiền cần chuyển.'
         }
+      },
+      {
+        id: 'note',
+        name: {
+          vi: 'ghi-chú'
+        },
+        description: {
+          vi: 'Ghi chú cho giao dịch này.'
+        }
       }
     ]
   },

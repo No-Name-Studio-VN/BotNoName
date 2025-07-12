@@ -337,6 +337,7 @@
       "title": "Ngân hàng"
     },
     "transfer": {
+      "title": "Chuyển tiền thành công",
       "success": "{{sender}} đã chuyển thành công {{amount}} sang {{receiver}}.",
       "selfTransfer": "Bạn không thể chuyển tiền cho chính bản thân."
     },
@@ -389,7 +390,7 @@
     "noResponse": "Không nhận được phản hồi, đã hủy thiết lập 😓",
     "promptBetInput": "Vui lòng nhập số tiền bạn muốn đặt cược vào trò chơi này.",
     "coinflip": {
-      "title": "Lật Xu",
+      "title": "Tài xỉu",
       "land": "Đồng xu đã rơi vào mặt ",
       "lose": "Bạn đã thua ",
       "win": "Bạn đã thắng "

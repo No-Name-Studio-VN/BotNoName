@@ -13,7 +13,7 @@ export interface GuildAfkDetail extends AfkDetail {
 }
 
 export interface UserDocument extends mongoose.Document {
-  userId: string
+  _id: string
   nationality?: string
   language: string
   premium?: boolean
@@ -28,18 +28,6 @@ export interface UserDocument extends mongoose.Document {
   reputation: {
     received: number
     given: number
-    timestamp?: Date
-  }
-  balance: {
-    cash: number
-    gem: number
-  }
-  bank: {
-    cash: number
-    gem: number
-  }
-  daily: {
-    streak: number
     timestamp?: Date
   }
   config: {
@@ -65,10 +53,11 @@ const loginLogsSchema = new mongoose.Schema({
 
 const userSchema = new mongoose.Schema(
   {
-    userId: {
+    _id: {
       type: String,
-      required: true,
-      unique: true
+      default: function () {
+        return new mongoose.Types.ObjectId().toString()
+      }
     },
     nationality: {
       type: String,
@@ -89,21 +78,6 @@ const userSchema = new mongoose.Schema(
         default: 0
       },
       given: {
-        type: Number,
-        default: 0
-      },
-      timestamp: Date
-    },
-    balance: {
-      cash: { type: Number, default: 0 },
-      gem: { type: Number, default: 0 }
-    },
-    bank: {
-      cash: { type: Number, default: 0 },
-      gem: { type: Number, default: 0 }
-    },
-    daily: {
-      streak: {
         type: Number,
         default: 0
       },

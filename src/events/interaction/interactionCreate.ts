@@ -30,7 +30,7 @@ const isContextMenuCommand = (
 const initializeCommandContext = async (
   interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | AutocompleteInteraction
 ) => {
-  const guildData = interaction.guild ? await getGuild({ guildId: interaction.guild.id }) : null
+  const guildData = interaction.guild ? await getGuild({ _id: interaction.guild.id }) : null
   const language = await i18nInit({ guild: interaction.guild, user: interaction.user })
   return { guildData, language }
 }

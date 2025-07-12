@@ -5,9 +5,10 @@ import Leveling, { LevelingDocument } from '@/models/leveling.model'
 export async function getUserLeveling(query: FilterQuery<LevelingDocument>, options: QueryOptions = { lean: false }) {
   let config = await Leveling.findOne(query, null, options)
 
-  if (!config && query.guildId) {
+  if (!config && query.guildId && query.userId) {
     const defaultConfig: Partial<LevelingDocument> = {
-      guildId: query.guildId as string
+      guildId: query.guildId as string,
+      userId: query.userId as string
     }
     config = await Leveling.create(defaultConfig)
 

@@ -9,9 +9,9 @@ import Guild, { GuildDocument } from '@/models/guild.model'
 export async function getGuild(query: FilterQuery<GuildDocument>, options: QueryOptions = { lean: false }) {
   let guild = await Guild.findOne(query, null, options)
 
-  if (!guild && query.guildId) {
+  if (!guild && query._id) {
     const defaultGuild: Partial<GuildDocument> = {
-      guildId: query.guildId as string
+      _id: query._id as string
     }
     guild = await Guild.create(defaultGuild)
 

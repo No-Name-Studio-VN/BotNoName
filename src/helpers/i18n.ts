@@ -53,8 +53,8 @@ export async function i18nInit({ guild, user }: { guild?: Guild; user?: User }) 
 
   try {
     const [guildData, userSettings] = await Promise.all([
-      guild ? getGuild({ guildId: guild.id }) : null,
-      user ? getUser({ userId: user.id }) : null
+      guild ? getGuild({ _id: guild.id }) : null,
+      user ? getUser({ _id: user.id }) : null
     ])
 
     const languageCode = getContextLang({

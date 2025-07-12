@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 import { defaultLang } from '@/config/i18n'
 
 export interface GuildDocument extends mongoose.Document {
-  guildId: string
+  _id: string
   prefix: string
   language: string
   force_server_language: boolean
@@ -88,7 +88,7 @@ export interface GuildDocument extends mongoose.Document {
 
 const guildSchema = new mongoose.Schema(
   {
-    guildId: {
+    _id: {
       type: String,
       required: true
     },

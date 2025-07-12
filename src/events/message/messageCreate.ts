@@ -28,7 +28,7 @@ async function DMHandler(client: BotClient, message: OmitPartialGroupDMChannel<M
 }
 
 async function guildHandler(client: BotClient, message: OmitPartialGroupDMChannel<Message<true>>) {
-  const data = await getGuild({ guildId: message.guild.id })
+  const data = await getGuild({ _id: message.guild.id })
 
   if (message.guild) {
     addExp(client, message)

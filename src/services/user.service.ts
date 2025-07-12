@@ -9,9 +9,9 @@ import User, { UserDocument } from '@/models/user.model'
 export async function getUser(query: FilterQuery<UserDocument>, options: QueryOptions = { lean: false }) {
   let user = await User.findOne(query, null, options)
 
-  if (!user && query.userId) {
+  if (!user && query._id) {
     const defaultUser: Partial<UserDocument> = {
-      userId: query.userId as string
+      _id: query._id as string
     }
     user = await User.create(defaultUser)
 

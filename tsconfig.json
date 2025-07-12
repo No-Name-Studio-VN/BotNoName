@@ -13,9 +13,10 @@
     "paths": {
       "@/*": ["src/*"],
       "~/*": ["./*"]
-    }
+    },
+    "importHelpers": true
   },
   "files": ["src/types/global.d.ts"],
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "scripts"],
   "exclude": ["node_modules", "dist"]
 }

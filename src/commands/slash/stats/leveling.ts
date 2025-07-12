@@ -10,7 +10,7 @@ import {
   User
 } from 'discord.js'
 
-import { ErrorEmbed, noUserInGuild } from '@/helpers/embedTemplate'
+import Embed from '@/helpers/embedTemplate'
 import { createRankCard } from '@/helpers/levelingUtils'
 import type { SlashCommand } from '@/types/Command'
 
@@ -35,10 +35,10 @@ export default {
     await interaction.deferReply()
     const mem = interaction.options.getUser('user') || interaction.member
     const mention = interaction.guild.members.cache.get(mem instanceof User ? mem.id : mem.user.id)
-    if (!mention) return await noUserInGuild(interaction)
+    if (!mention) return await Embed.noUserInGuild(interaction)
 
     if (mention.user.bot || mention.user.system)
-      return await ErrorEmbed(interaction, {
+      return Embed.error(interaction, {
         description: i18n.t('leveling.botNoLevelingData')
       })
 
@@ -48,7 +48,7 @@ export default {
         targetUser: mention
       })
       if (!image)
-        return await ErrorEmbed(interaction, {
+        return Embed.error(interaction, {
           description: 'leveling.noGuildLevelingData'
         })
 

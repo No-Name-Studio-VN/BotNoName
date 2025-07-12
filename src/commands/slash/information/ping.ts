@@ -24,7 +24,7 @@ export default {
     const container = new ContainerBuilder()
 
     const pingText = new TextDisplayBuilder().setContent(
-      [`# :ping_pong: **PING: ${Math.abs(Math.round(Date.now() - startTime))} ms.**`, '**PONG !** :ping_pong: 😲'].join(
+      [`# :ping_pong: **PING: ${Math.abs(Math.round(Date.now() - startTime))} ms.** **PONG !** :ping_pong: 😲`].join(
         '\n'
       )
     )
@@ -33,8 +33,7 @@ export default {
 
     const uptimeText = new TextDisplayBuilder().setContent(
       [
-        '## Bot đã trực tuyến được',
-        `${Math.round(interaction.client.uptime / (1000 * 60 * 60))} giờ, ${Math.round(interaction.client.uptime / (1000 * 60)) % 60} phút và ${Math.round(interaction.client.uptime / 1000) % 60} giây.`
+        `Bot đã trực tuyến được **${Math.round(interaction.client.uptime / (1000 * 60 * 60))} giờ, ${Math.round(interaction.client.uptime / (1000 * 60)) % 60} phút và ${Math.round(interaction.client.uptime / 1000) % 60} giây**.`
       ].join('\n')
     )
 

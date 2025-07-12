@@ -1,5 +1,23 @@
-import type { ChatInputCommandInteraction, ContextMenuCommandInteraction } from 'discord.js'
-import { APIEmbedField, ColorResolvable, EmbedBuilder, Message, MessageFlags } from 'discord.js'
+import type {
+  ButtonInteraction,
+  ChatInputCommandInteraction,
+  ColorResolvable,
+  ContextMenuCommandInteraction,
+  InteractionReplyOptions
+} from 'discord.js'
+import {
+  APIEmbedField,
+  ContainerBuilder,
+  EmbedBuilder,
+  MediaGalleryBuilder,
+  MediaGalleryItemBuilder,
+  Message,
+  MessageFlags,
+  SeparatorBuilder,
+  SeparatorSpacingSize,
+  TextDisplayBuilder
+} from 'discord.js'
+import type { i18n } from 'i18next'
 import { isEmpty } from 'lodash-es'
 
 import { isUrl } from '@/helpers/validation'
@@ -11,6 +29,9 @@ const EMBED_COLORS = {
   Warning: 'Yellow'
 } as const
 
+type InteractionType = ChatInputCommandInteraction | ContextMenuCommandInteraction | ButtonInteraction | Message
+type ReplyMethod = 'edit' | 'reply'
+
 interface EmbedOptions {
   title?: string
   description?: string
@@ -21,233 +42,211 @@ interface EmbedOptions {
   thumbnail?: string
   author?: string
   ephemeral?: boolean
-  method?: 'edit' | 'reply'
+  method?: ReplyMethod
   duration?: number
-}
-
-interface I18nextTranslation {
-  t: (key: string) => string
 }
 
 /**
  * A utility class for creating and sending Discord embeds
  */
 class Embed {
-  private interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message
-  private title?: string
-  private description?: string
-  private color?: ColorResolvable
-  private fields?: APIEmbedField[]
-  private footer?: string
-  private image?: string
-  private thumbnail?: string
-  private author?: string
-  private ephemeral: boolean
-  private method: 'edit' | 'reply'
-  private duration: number
+  private interaction: InteractionType
+  private options: Required<EmbedOptions>
+  private IsComponentsV2: boolean
 
   /**
    * Creates an embed instance
    */
-  constructor(
-    interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message,
-    options: EmbedOptions = {}
-  ) {
-    const {
-      title,
-      description,
-      color = 'Blurple',
-      fields,
-      footer,
-      image,
-      thumbnail,
-      author,
-      ephemeral = false,
-      method = 'edit',
-      duration = 0
-    } = options
-
+  constructor(interaction: InteractionType, options: EmbedOptions = {}, IsComponentsV2: boolean = false) {
     this.interaction = interaction
-    this.title = title
-    this.description = description
-    this.color = color
-    this.fields = fields
-    this.footer = footer
-    this.image = image
-    this.thumbnail = thumbnail
-    this.author = author
-    this.ephemeral = ephemeral
-    this.method = method
-    this.duration = duration
+    this.IsComponentsV2 = IsComponentsV2
+    this.options = {
+      title: '',
+      description: '',
+      color: 'Blurple',
+      fields: [],
+      footer: '',
+      image: '',
+      thumbnail: '',
+      author: '',
+      ephemeral: false,
+      method: 'edit',
+      duration: 0,
+      ...options
+    }
   }
 
-  /**
-   * @returns {EmbedBuilder} an instance of EmbedBuilder
-   */
+  // Method chaining setters
+  setTitle(title: string): this {
+    this.options.title = title
+    return this
+  }
+
+  setDescription(description: string): this {
+    this.options.description = description
+    return this
+  }
+
+  setColor(color: ColorResolvable): this {
+    this.options.color = color
+    return this
+  }
+
   buildEmbed(): EmbedBuilder {
     const embed = new EmbedBuilder()
-    if (this.title && !isEmpty(this.title)) embed.setTitle(this.title)
-    if (this.description && !isEmpty(this.description)) embed.setDescription(this.description)
-    if (this.color) embed.setColor(this.color)
-    if (this.fields) embed.addFields(this.fields)
-    if (this.footer && !isEmpty(this.footer)) embed.setFooter({ text: this.footer })
-    if (this.image && !isEmpty(this.image) && isUrl(this.image)) embed.setImage(this.image)
-    if (this.thumbnail && !isEmpty(this.thumbnail) && isUrl(this.thumbnail)) embed.setThumbnail(this.thumbnail)
-    if (this.author) embed.setAuthor({ name: this.author })
+    const { title, description, color, fields, footer, image, thumbnail, author } = this.options
+
+    if (title && !isEmpty(title)) embed.setTitle(title)
+    if (description && !isEmpty(description)) embed.setDescription(description)
+    if (color) embed.setColor(color)
+    if (fields?.length) embed.addFields(fields)
+    if (footer && !isEmpty(footer)) embed.setFooter({ text: footer })
+    if (image && !isEmpty(image) && isUrl(image)) embed.setImage(image)
+    if (thumbnail && !isEmpty(thumbnail) && isUrl(thumbnail)) embed.setThumbnail(thumbnail)
+    if (author) embed.setAuthor({ name: author })
+
     return embed
   }
 
-  buildMsg() {
-    const embed = this.buildEmbed()
-    return { embeds: [embed], flags: this.ephemeral ? MessageFlags.Ephemeral : 0 } // 64 is the ephemeral flag in Discord.js
+  buildComponents(): ContainerBuilder {
+    const container = new ContainerBuilder()
+    const { author, title, description, image, footer } = this.options
+
+    if (author) container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`### ${author}`))
+    if (title && !isEmpty(title)) container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`## ${title}`))
+    if (description && !isEmpty(description))
+      container.addTextDisplayComponents(new TextDisplayBuilder().setContent(description))
+    if (image && !isEmpty(image) && isUrl(image)) {
+      container.addMediaGalleryComponents(
+        new MediaGalleryBuilder().addItems(new MediaGalleryItemBuilder().setURL(image))
+      )
+    }
+    if (footer && !isEmpty(footer)) {
+      container.addSeparatorComponents(new SeparatorBuilder().setSpacing(SeparatorSpacingSize.Large).setDivider(true))
+      container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`-# ${footer}`))
+    }
+
+    return container
   }
 
-  /** Send the embed to the interaction
-   * @returns {Promise<void>} respond to the interaction
-   */
+  buildMsg(): InteractionReplyOptions {
+    const baseOptions = { ephemeral: this.options.ephemeral }
+
+    return this.IsComponentsV2
+      ? { ...baseOptions, components: [this.buildComponents()], flags: MessageFlags.IsComponentsV2 }
+      : { ...baseOptions, embeds: [this.buildEmbed()] }
+  }
+
+  private getReplyMethod(): string {
+    if (this.options.method === 'reply') return 'reply'
+    return this.interaction instanceof Message ? 'reply' : 'editReply'
+  }
+
+  private async scheduleDelete(msg: Message): Promise<void> {
+    if (this.options.duration <= 0 || !msg?.delete) return
+
+    setTimeout(() => {
+      msg.delete().catch(() => {})
+    }, this.options.duration).unref()
+  }
+
   async send(): Promise<void> {
     try {
-      const replyMethod =
-        this.method === 'edit' ? (this.interaction instanceof Message ? 'reply' : 'editReply') : 'reply'
+      const replyMethod = this.getReplyMethod()
       const msg = await this.interaction[replyMethod](this.buildMsg())
-
-      if (this.duration > 0) {
-        setTimeout(() => {
-          if (msg && msg.delete) {
-            msg.delete().catch(() => {})
-          }
-        }, this.duration).unref()
-      }
+      await this.scheduleDelete(msg)
     } catch (error) {
       console.error('Failed to send embed:', error)
     }
   }
 
-  // Static factory methods for common embed types
-  /**
-   * Sends an error embed with default error styling
-   */
+  // Static factory method to reduce duplication
+  private static createAndSend(
+    interaction: InteractionType,
+    baseOptions: Partial<EmbedOptions>,
+    userOptions: EmbedOptions = {},
+    IsComponentsV2: boolean = false
+  ): Promise<void> {
+    const embed = new Embed(interaction, { ...baseOptions, ...userOptions }, IsComponentsV2)
+    return embed.send()
+  }
+
   static error(
-    interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message,
-    options: EmbedOptions = {}
+    interaction: InteractionType,
+    options: EmbedOptions = {},
+    IsComponentsV2: boolean = false
   ): Promise<void> {
-    const embed = new Embed(interaction, {
-      color: EMBED_COLORS.Error,
-      ephemeral: true,
-      footer: 'https://cp.nnsvn.me/support',
-      ...options
-    })
-    return embed.send()
+    return this.createAndSend(
+      interaction,
+      {
+        color: EMBED_COLORS.Error,
+        ephemeral: true,
+        footer: 'https://cp.nnsvn.me/support'
+      },
+      options,
+      IsComponentsV2
+    )
   }
 
-  /**
-   * Sends a success embed with default success styling
-   */
   static success(
-    interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message,
-    options: EmbedOptions = {}
+    interaction: InteractionType,
+    options: EmbedOptions = {},
+    IsComponentsV2: boolean = false
   ): Promise<void> {
-    const embed = new Embed(interaction, {
-      color: EMBED_COLORS.Success,
-      ephemeral: false,
-      ...options
-    })
-    return embed.send()
+    return this.createAndSend(
+      interaction,
+      {
+        color: EMBED_COLORS.Success,
+        ephemeral: false
+      },
+      options,
+      IsComponentsV2
+    )
   }
 
-  /**
-   * Sends an embed indicating the bot lacks required permissions
-   */
   static botNoPermission(
-    interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message,
-    i18next: I18nextTranslation,
-    permission: string = 'N/A'
+    interaction: InteractionType,
+    i18n: i18n,
+    permission: string = 'N/A',
+    IsComponentsV2: boolean = false
   ): Promise<void> {
-    return this.error(interaction, {
-      title: i18next.t('BotNoPermission'),
-      description: `${i18next.t('nopermission')}. Missing: ${permission}`,
-      footer: 'https://bot.nnsvn.me/docs/permissions'
-    })
+    return this.error(
+      interaction,
+      {
+        title: i18n.t('BotNoPermission'),
+        description: `${i18n.t('nopermission')}. Missing: ${permission}`,
+        footer: 'https://bot.nnsvn.me/docs/permissions'
+      },
+      IsComponentsV2
+    )
   }
 
-  /**
-   * Sends an embed indicating the user lacks required permissions
-   */
   static userNoPermission(
-    interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message,
-    i18next: I18nextTranslation,
-    permission: string = 'N/A'
+    interaction: InteractionType,
+    i18n: i18n,
+    permission: string = 'N/A',
+    IsComponentsV2: boolean = false
   ): Promise<void> {
-    return this.error(interaction, {
-      title: i18next.t('UserNoPermission'),
-      description: `${i18next.t('nopermission')}. Missing: ${permission}`,
-      footer: 'https://bot.nnsvn.me/docs/permissions'
-    })
+    return this.error(
+      interaction,
+      {
+        title: i18n.t('UserNoPermission'),
+        description: `${i18n.t('nopermission')}. Missing: ${permission}`,
+        footer: 'https://bot.nnsvn.me/docs/permissions'
+      },
+      IsComponentsV2
+    )
   }
 
-  /**
-   * Sends an embed indicating no user was found in the guild
-   */
-  static noUserInGuild(
-    interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message
-  ): Promise<void> {
-    return this.error(interaction, {
-      description: 'There is no mentioned user in the guild'
-    })
+  static noUserInGuild(interaction: InteractionType, IsComponentsV2: boolean = false): Promise<void> {
+    return this.error(
+      interaction,
+      {
+        description: 'There is no mentioned user in the guild'
+      },
+      IsComponentsV2
+    )
   }
 }
 
-// Legacy function wrappers for backward compatibility
-
-/**
- * @deprecated Use Embed.error() instead
- */
-function ErrorEmbed(
-  interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message,
-  options: EmbedOptions = {}
-): Promise<void> {
-  return Embed.error(interaction, options)
-}
-
-/**
- * @deprecated Use Embed.success() instead
- */
-function SuccessEmbed(
-  interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message,
-  options: EmbedOptions = {}
-): Promise<void> {
-  return Embed.success(interaction, options)
-}
-
-/**
- * @deprecated Use Embed.botNoPermission() instead
- */
-function BotNoPermissionEmbed(
-  interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message,
-  i18next: I18nextTranslation,
-  { permission = 'N/A' }: { permission?: string } = {}
-): Promise<void> {
-  return Embed.botNoPermission(interaction, i18next, permission)
-}
-
-/**
- * @deprecated Use Embed.userNoPermission() instead
- */
-function UserNoPermissionEmbed(
-  interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message,
-  i18next: I18nextTranslation,
-  { permission = 'N/A' }: { permission?: string } = {}
-): Promise<void> {
-  return Embed.userNoPermission(interaction, i18next, permission)
-}
-
-/**
- * @deprecated Use Embed.noUserInGuild() instead
- */
-function noUserInGuild(
-  interaction: ChatInputCommandInteraction | ContextMenuCommandInteraction | Message
-): Promise<void> {
-  return Embed.noUserInGuild(interaction)
-}
-
-export { BotNoPermissionEmbed, Embed, ErrorEmbed, noUserInGuild, SuccessEmbed, UserNoPermissionEmbed }
+export default Embed

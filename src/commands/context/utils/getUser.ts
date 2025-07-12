@@ -1,7 +1,7 @@
 import { EmbedBuilder, MessageFlags } from 'discord.js'
 import { DateTime } from 'luxon'
 
-import { noUserInGuild } from '@/helpers/embedTemplate'
+import Embed from '@/helpers/embedTemplate'
 import { UserContextCommand } from '@/types/Command'
 
 export default {
@@ -93,7 +93,7 @@ export default {
         ]
       })
     } else {
-      return noUserInGuild(interaction)
+      return Embed.noUserInGuild(interaction)
     }
   }
 } as UserContextCommand
